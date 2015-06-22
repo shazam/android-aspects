@@ -62,6 +62,14 @@ and then include it in your dependencies:
 compile 'com.shazam.android:aspects:1.0.0-SNAPSHOT'
 ```
 
+note that you will also need to add your local repository to your list of repositories, since the android plugin will cause the default mavenLocal() repository to point to the one provided by the Android sdk:
+
+```groovy
+repositories {
+    maven { url "${System.env.HOME}/.m2" }
+}
+```
+
 License
 ----
 
