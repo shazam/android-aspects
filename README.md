@@ -2,7 +2,7 @@
 
 This library provides a lightweight mechanism for adding functionality to **Activities**, **Fragments** and **Applications** without modifying their source code, by using annotations.
 
-Objects extending from **AspectActivity**, **AspectFragmentActivity**, **AspectFragment**, **AspectSupportFragment** and **AspectApplication**, can apply the **Aspects** annotation and provide a list of classes, called *aspects,* that add functionality at runtime.
+Objects extending from **AspectActivity**, **AspectFragmentActivity**, **AspectAppCompatActivity**, **AspectFragment**, **AspectSupportFragment** and **AspectApplication**, can apply the **Aspects** annotation and provide a list of classes, called *aspects,* that add functionality at runtime.
 
 For example, this is how an Aspect providing multidex functionality to the Application would look like:
 
