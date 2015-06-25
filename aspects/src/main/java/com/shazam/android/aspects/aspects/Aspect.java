@@ -12,6 +12,8 @@
  */
 package com.shazam.android.aspects.aspects;
 
+import android.support.annotation.NonNull;
+
 import com.shazam.android.aspects.annotations.Aspects;
 
 /**
@@ -19,5 +21,6 @@ import com.shazam.android.aspects.annotations.Aspects;
  * interface (directly or indirectly) can be listed in the {@link Aspects#aspects()} parameter.
  */
 public interface Aspect<C> {
+    @NonNull
     Class<C> classActingOn();
 }
