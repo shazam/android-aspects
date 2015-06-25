@@ -414,6 +414,6 @@ public class NoOpAppCompatActivityAspect implements AppCompatActivityAspect {
 
     @Override
     public Class<AspectAppCompatActivity> classActingOn() {
-        return null;
+        return AspectAppCompatActivity.class;
     }
 }
