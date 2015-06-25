@@ -412,6 +412,7 @@ public class NoOpAppCompatActivityAspect implements AppCompatActivityAspect {
     public void onPrepareDialog(AspectAppCompatActivity activity, int id, Dialog dialog, Bundle args) {
     }
 
+    @NonNull
     @Override
     public Class<AspectAppCompatActivity> classActingOn() {
         return AspectAppCompatActivity.class;

@@ -16,6 +16,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.ContextMenu;
@@ -149,6 +150,7 @@ public class NoOpSupportFragmentAspect implements SupportFragmentAspect {
     public void onViewStateRestored(AspectSupportFragment fragment, Bundle savedInstanceState) {
     }
 
+    @NonNull
     @Override
     public Class<AspectSupportFragment> classActingOn() {
         return AspectSupportFragment.class;

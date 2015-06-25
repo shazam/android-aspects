@@ -14,6 +14,7 @@ package com.shazam.android.aspects.aspects.application;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.support.annotation.NonNull;
 
 import com.shazam.android.aspects.base.application.AspectApplication;
 
@@ -43,6 +44,7 @@ public class NoOpApplicationAspect implements ApplicationAspect {
     public void attachBaseContext(AspectApplication application, Context base) {
     }
 
+    @NonNull
     @Override
     public Class<AspectApplication> classActingOn() {
         return AspectApplication.class;
