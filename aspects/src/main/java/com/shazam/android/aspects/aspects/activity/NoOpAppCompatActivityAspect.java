@@ -43,7 +43,7 @@ import com.shazam.android.aspects.base.activity.AspectAppCompatActivity;
  * It allows classes to extend this instead of implementing {@link AppCompatActivityAspect} when
  * they only need to implement only specific methods.
  */
-public class NoOpAppCompatActivityAspectImpl implements AppCompatActivityAspect {
+public class NoOpAppCompatActivityAspect implements AppCompatActivityAspect {
     @Override
     public void onCreate(AspectAppCompatActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
     }
