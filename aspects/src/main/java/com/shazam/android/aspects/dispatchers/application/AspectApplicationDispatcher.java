@@ -14,6 +14,7 @@ package com.shazam.android.aspects.dispatchers.application;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.support.annotation.NonNull;
 
 import com.shazam.android.aspects.aspects.Aspect;
 import com.shazam.android.aspects.aspects.FilteredAspectsProvider;
@@ -33,46 +34,46 @@ public class AspectApplicationDispatcher {
         this.applicationAspects = aspectsProvider.getAspects();
     }
 
-    public static AspectApplicationDispatcher create(AspectApplication application) {
+    public static AspectApplicationDispatcher create(@NonNull AspectApplication application) {
         return new AspectApplicationDispatcher(providerFor(application));
     }
 
-    private static AspectsProvider<ApplicationAspect> providerFor(AspectApplication application) {
+    private static AspectsProvider<ApplicationAspect> providerFor(@NonNull AspectApplication application) {
         return annotatedAspectsFrom(application, ApplicationAspect.class, AspectApplication.class);
     }
 
-    public void dispatchOnCreate(AspectApplication application) {
+    public void dispatchOnCreate(@NonNull AspectApplication application) {
         for (ApplicationAspect applicationAspect : applicationAspects) {
             applicationAspect.onCreate(application);
         }
     }
 
-    public void dispatchOnLowMemory(AspectApplication application) {
+    public void dispatchOnLowMemory(@NonNull AspectApplication application) {
         for (ApplicationAspect applicationAspect : applicationAspects) {
             applicationAspect.onLowMemory(application);
         }
     }
 
-    public void dispatchOnConfigurationChanged(AspectApplication application, Configuration newConfig) {
+    public void dispatchOnConfigurationChanged(@NonNull AspectApplication application, Configuration newConfig) {
         for (ApplicationAspect applicationAspect : applicationAspects) {
             applicationAspect.onConfigurationChanged(application, newConfig);
         }
 
     }
 
-    public void dispatchOnTerminate(AspectApplication application) {
+    public void dispatchOnTerminate(@NonNull AspectApplication application) {
         for (ApplicationAspect applicationAspect : applicationAspects) {
             applicationAspect.onTerminate(application);
         }
     }
 
-    public void dispatchOnTrimMemory(AspectApplication application, int level) {
+    public void dispatchOnTrimMemory(@NonNull AspectApplication application, int level) {
         for (ApplicationAspect applicationAspect : applicationAspects) {
             applicationAspect.onTrimMemory(application, level);
         }
     }
 
-    public void dispatchAttachBaseContext(AspectApplication application, Context base) {
+    public void dispatchAttachBaseContext(@NonNull AspectApplication application, Context base) {
         for (ApplicationAspect applicationAspect : applicationAspects) {
             applicationAspect.attachBaseContext(application, base);
         }

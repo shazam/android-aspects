@@ -21,27 +21,27 @@ import com.shazam.android.aspects.base.application.AspectApplication;
 public class NoOpApplicationAspect implements ApplicationAspect {
 
     @Override
-    public void onCreate(AspectApplication application) {
+    public void onCreate(@NonNull AspectApplication application) {
     }
 
     @Override
-    public void onLowMemory(AspectApplication application) {
+    public void onLowMemory(@NonNull AspectApplication application) {
     }
 
     @Override
-    public void onConfigurationChanged(AspectApplication application, Configuration newConfig) {
+    public void onConfigurationChanged(@NonNull AspectApplication application, Configuration newConfig) {
     }
 
     @Override
-    public void onTerminate(AspectApplication application) {
+    public void onTerminate(@NonNull AspectApplication application) {
     }
 
     @Override
-    public void onTrimMemory(AspectApplication application, int level) {
+    public void onTrimMemory(@NonNull AspectApplication application, int level) {
     }
 
     @Override
-    public void attachBaseContext(AspectApplication application, Context base) {
+    public void attachBaseContext(@NonNull AspectApplication application, Context base) {
     }
 
     @NonNull
