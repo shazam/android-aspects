@@ -48,16 +48,16 @@ import java.util.Collection;
  * This dispatcher holds a list of {@link SupportActivityAspect}s and delegates all the lifecycle 
  * calls to them.
  */
-public class SupportAspectActivityDispatcher {
+public class AspectSupportActivityDispatcher {
     
     private Collection<SupportActivityAspect> activityAspects;
 
-    public SupportAspectActivityDispatcher(AspectsProvider<SupportActivityAspect> aspectsProvider) {
+    public AspectSupportActivityDispatcher(AspectsProvider<SupportActivityAspect> aspectsProvider) {
         this.activityAspects = aspectsProvider.getAspects();
     }
 
-    public static SupportAspectActivityDispatcher create(AspectFragmentActivity activity) {
-        return new SupportAspectActivityDispatcher(providerFor(activity));
+    public static AspectSupportActivityDispatcher create(AspectFragmentActivity activity) {
+        return new AspectSupportActivityDispatcher(providerFor(activity));
     }
 
     private static AspectsProvider<SupportActivityAspect> providerFor(AspectFragmentActivity activity) {

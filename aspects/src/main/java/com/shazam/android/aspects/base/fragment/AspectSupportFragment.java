@@ -31,7 +31,7 @@ import android.view.animation.Animation;
 import com.shazam.android.aspects.annotations.Aspects;
 import com.shazam.android.aspects.aspects.Aspect;
 import com.shazam.android.aspects.aspects.AspectsProvider;
-import com.shazam.android.aspects.dispatchers.fragment.SupportAspectFragmentDispatcher;
+import com.shazam.android.aspects.dispatchers.fragment.AspectSupportFragmentDispatcher;
 import com.shazam.android.aspects.aspects.fragment.FragmentAspect;
 
 /**
@@ -41,11 +41,11 @@ import com.shazam.android.aspects.aspects.fragment.FragmentAspect;
  */
 public class AspectSupportFragment extends Fragment {
 
-    private SupportAspectFragmentDispatcher dispatcher;
+    private AspectSupportFragmentDispatcher dispatcher;
 
     @SuppressWarnings("UnusedDeclaration")
     public AspectSupportFragment() {
-        this.dispatcher = SupportAspectFragmentDispatcher.create(this);
+        this.dispatcher = AspectSupportFragmentDispatcher.create(this);
     }
 
     @Override

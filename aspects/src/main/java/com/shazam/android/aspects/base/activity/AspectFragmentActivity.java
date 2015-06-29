@@ -40,7 +40,7 @@ import android.view.WindowManager;
 import com.shazam.android.aspects.annotations.Aspects;
 import com.shazam.android.aspects.aspects.Aspect;
 import com.shazam.android.aspects.aspects.AspectsProvider;
-import com.shazam.android.aspects.dispatchers.activity.SupportAspectActivityDispatcher;
+import com.shazam.android.aspects.dispatchers.activity.AspectSupportActivityDispatcher;
 import com.shazam.android.aspects.aspects.activity.ActivityAspect;
 
 /**
@@ -50,11 +50,11 @@ import com.shazam.android.aspects.aspects.activity.ActivityAspect;
  */
 public class AspectFragmentActivity extends FragmentActivity {
 
-    private SupportAspectActivityDispatcher dispatcher;
+    private AspectSupportActivityDispatcher dispatcher;
 
     @SuppressWarnings("UnusedDeclaration")
     public AspectFragmentActivity() {
-        this.dispatcher = SupportAspectActivityDispatcher.create(this);
+        this.dispatcher = AspectSupportActivityDispatcher.create(this);
     }
 
     @Override
