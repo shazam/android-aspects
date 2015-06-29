@@ -16,10 +16,17 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
 
+import com.shazam.android.aspects.annotations.Aspects;
 import com.shazam.android.aspects.aspects.Aspect;
 import com.shazam.android.aspects.aspects.AspectsProvider;
+import com.shazam.android.aspects.aspects.application.ApplicationAspect;
 import com.shazam.android.aspects.dispatchers.application.AspectApplicationDispatcher;
 
+/**
+ * This is the base {@link Application} for lifecycle delegation. Applications should extend this
+ * class and then annotate themselves with the {@link Aspects} annotation to register
+ * {@link ApplicationAspect}s
+ */
 public class AspectApplication extends Application {
 
     private final AspectApplicationDispatcher dispatcher;
