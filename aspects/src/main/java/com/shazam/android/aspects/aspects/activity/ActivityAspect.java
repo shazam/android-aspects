@@ -24,6 +24,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.ActionMode;
@@ -46,156 +47,156 @@ import com.shazam.android.aspects.aspects.Aspect;
  */
 public interface ActivityAspect extends Aspect<AspectActivity> {
 
-    void onSaveInstanceState(AspectActivity activity, Bundle outState, PersistableBundle outPersistentState);
+    void onSaveInstanceState(@NonNull AspectActivity activity, Bundle outState, PersistableBundle outPersistentState);
 
-    void onActivityResult(AspectActivity activity, int requestCode, int resultCode, Intent data);
+    void onActivityResult(@NonNull AspectActivity activity, int requestCode, int resultCode, Intent data);
 
-    void onApplyThemeResource(AspectActivity activity, Resources.Theme theme, int resid, boolean first);
+    void onApplyThemeResource(@NonNull AspectActivity activity, @NonNull Resources.Theme theme, int resid, boolean first);
 
-    void onChildTitleChanged(AspectActivity activity, Activity childActivity, CharSequence title);
+    void onChildTitleChanged(@NonNull AspectActivity activity, Activity childActivity, CharSequence title);
 
-    void onCreate(AspectActivity activity, Bundle savedInstanceState);
+    void onCreate(@NonNull AspectActivity activity, Bundle savedInstanceState);
 
-    void onDestroy(AspectActivity activity);
+    void onDestroy(@NonNull AspectActivity activity);
 
-    void onNewIntent(AspectActivity activity, Intent intent);
+    void onNewIntent(@NonNull AspectActivity activity, Intent intent);
 
-    void onPause(AspectActivity activity);
+    void onPause(@NonNull AspectActivity activity);
 
-    void onPostCreate(AspectActivity activity, Bundle savedInstanceState);
+    void onPostCreate(@NonNull AspectActivity activity, Bundle savedInstanceState);
 
-    void onPostResume(AspectActivity activity);
+    void onPostResume(@NonNull AspectActivity activity);
 
-    void onRestart(AspectActivity activity);
+    void onRestart(@NonNull AspectActivity activity);
 
-    void onRestoreInstanceState(AspectActivity activity, Bundle savedInstanceState);
+    void onRestoreInstanceState(@NonNull AspectActivity activity, @NonNull Bundle savedInstanceState);
 
-    void onResume(AspectActivity activity);
+    void onResume(@NonNull AspectActivity activity);
 
-    void onSaveInstanceState(AspectActivity activity, Bundle outState);
+    void onSaveInstanceState(@NonNull AspectActivity activity, @NonNull Bundle outState);
 
-    void onStart(AspectActivity activity);
+    void onStart(@NonNull AspectActivity activity);
 
-    void onStop(AspectActivity activity);
+    void onStop(@NonNull AspectActivity activity);
 
-    void onTitleChanged(AspectActivity activity, CharSequence title, int color);
+    void onTitleChanged(@NonNull AspectActivity activity, CharSequence title, int color);
 
-    void onUserLeaveHint(AspectActivity activity);
-
-    @Nullable
-    ActionMode onWindowStartingActionMode(AspectActivity activity, ActionMode.Callback callback);
-
-    boolean onContextItemSelected(AspectActivity activity, MenuItem item);
-
-    boolean onCreateOptionsMenu(AspectActivity activity, Menu menu);
-
-    boolean onCreatePanelMenu(AspectActivity activity, int featureId, Menu menu);
-
-    boolean onCreateThumbnail(AspectActivity activity, Bitmap outBitmap, Canvas canvas);
-
-    boolean onGenericMotionEvent(AspectActivity activity, MotionEvent event);
-
-    boolean onKeyDown(AspectActivity activity, int keyCode, KeyEvent event);
-
-    boolean onKeyLongPress(AspectActivity activity, int keyCode, KeyEvent event);
-
-    boolean onKeyMultiple(AspectActivity activity, int keyCode, int repeatCount, KeyEvent event);
-
-    boolean onKeyShortcut(AspectActivity activity, int keyCode, KeyEvent event);
-
-    boolean onKeyUp(AspectActivity activity, int keyCode, KeyEvent event);
-
-    boolean onMenuItemSelected(AspectActivity activity, int featureId, MenuItem item);
-
-    boolean onMenuOpened(AspectActivity activity, int featureId, Menu menu);
-
-    boolean onNavigateUp(AspectActivity activity);
-
-    boolean onNavigateUpFromChild(AspectActivity activity, Activity child);
-
-    boolean onOptionsItemSelected(AspectActivity activity, MenuItem item);
-
-    boolean onPrepareOptionsMenu(AspectActivity activity, Menu menu);
-
-    boolean onPreparePanel(AspectActivity activity, int featureId, View view, Menu menu);
-
-    boolean onSearchRequested(AspectActivity activity);
-
-    boolean onTouchEvent(AspectActivity activity, MotionEvent event);
-
-    boolean onTrackballEvent(AspectActivity activity, MotionEvent event);
+    void onUserLeaveHint(@NonNull AspectActivity activity);
 
     @Nullable
-    CharSequence onCreateDescription(AspectActivity activity);
+    ActionMode onWindowStartingActionMode(@NonNull AspectActivity activity, ActionMode.Callback callback);
+
+    boolean onContextItemSelected(@NonNull AspectActivity activity, MenuItem item);
+
+    boolean onCreateOptionsMenu(@NonNull AspectActivity activity, Menu menu);
+
+    boolean onCreatePanelMenu(@NonNull AspectActivity activity, int featureId, Menu menu);
+
+    boolean onCreateThumbnail(@NonNull AspectActivity activity, Bitmap outBitmap, Canvas canvas);
+
+    boolean onGenericMotionEvent(@NonNull AspectActivity activity, MotionEvent event);
+
+    boolean onKeyDown(@NonNull AspectActivity activity, int keyCode, @NonNull KeyEvent event);
+
+    boolean onKeyLongPress(@NonNull AspectActivity activity, int keyCode, KeyEvent event);
+
+    boolean onKeyMultiple(@NonNull AspectActivity activity, int keyCode, int repeatCount, KeyEvent event);
+
+    boolean onKeyShortcut(@NonNull AspectActivity activity, int keyCode, KeyEvent event);
+
+    boolean onKeyUp(@NonNull AspectActivity activity, int keyCode, @NonNull KeyEvent event);
+
+    boolean onMenuItemSelected(@NonNull AspectActivity activity, int featureId, @NonNull MenuItem item);
+
+    boolean onMenuOpened(@NonNull AspectActivity activity, int featureId, Menu menu);
+
+    boolean onNavigateUp(@NonNull AspectActivity activity);
+
+    boolean onNavigateUpFromChild(@NonNull AspectActivity activity, Activity child);
+
+    boolean onOptionsItemSelected(@NonNull AspectActivity activity, MenuItem item);
+
+    boolean onPrepareOptionsMenu(@NonNull AspectActivity activity, Menu menu);
+
+    boolean onPreparePanel(@NonNull AspectActivity activity, int featureId, View view, Menu menu);
+
+    boolean onSearchRequested(@NonNull AspectActivity activity);
+
+    boolean onTouchEvent(@NonNull AspectActivity activity, MotionEvent event);
+
+    boolean onTrackballEvent(@NonNull AspectActivity activity, MotionEvent event);
 
     @Nullable
-    View onCreatePanelView(AspectActivity activity, int featureId);
+    CharSequence onCreateDescription(@NonNull AspectActivity activity);
 
     @Nullable
-    View onCreateView(AspectActivity activity, String name, Context context, AttributeSet attrs);
-
-    View onCreateView(AspectActivity activity, View parent, String name, Context context, AttributeSet attrs);
-
-    void onActionModeFinished(AspectActivity activity, ActionMode mode);
-
-    void onActionModeStarted(AspectActivity activity, ActionMode mode);
-
-    void onActivityReenter(AspectActivity activity, int resultCode, Intent data);
-
-    void onAttachedToWindow(AspectActivity activity);
-
-    void onAttachFragment(AspectActivity activity, Fragment fragment);
-
-    void onBackPressed(AspectActivity activity);
-
-    void onConfigurationChanged(AspectActivity activity, Configuration newConfig);
-
-    void onContentChanged(AspectActivity activity);
-
-    void onContextMenuClosed(AspectActivity activity, Menu menu);
-
-    void onCreate(AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
-
-    void onCreateContextMenu(AspectActivity activity, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo);
-
-    void onCreateNavigateUpTaskStack(AspectActivity activity, TaskStackBuilder builder);
-
-    void onDetachedFromWindow(AspectActivity activity);
-
-    void onEnterAnimationComplete(AspectActivity activity);
-
-    void onLowMemory(AspectActivity activity);
-
-    void onOptionsMenuClosed(AspectActivity activity, Menu menu);
-
-    void onPanelClosed(AspectActivity activity, int featureId, Menu menu);
-
-    void onPostCreate(AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
-
-    void onPrepareNavigateUpTaskStack(AspectActivity activity, TaskStackBuilder builder);
-
-    void onProvideAssistData(AspectActivity activity, Bundle data);
-
-    void onRestoreInstanceState(AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
-
-    void onTrimMemory(AspectActivity activity, int level);
-
-    void onUserInteraction(AspectActivity activity);
-
-    void onVisibleBehindCanceled(AspectActivity activity);
-
-    void onWindowAttributesChanged(AspectActivity activity, WindowManager.LayoutParams params);
-
-    void onWindowFocusChanged(AspectActivity activity, boolean hasFocus);
-
-    Dialog onCreateDialog(AspectActivity activity, int id);
+    View onCreatePanelView(@NonNull AspectActivity activity, int featureId);
 
     @Nullable
-    Dialog onCreateDialog(AspectActivity activity, int id, Bundle args);
+    View onCreateView(@NonNull AspectActivity activity, String name, Context context, AttributeSet attrs);
 
-    void onPrepareDialog(AspectActivity activity, int id, Dialog dialog);
+    View onCreateView(@NonNull AspectActivity activity, View parent, String name, @NonNull Context context, @NonNull AttributeSet attrs);
 
-    void onPrepareDialog(AspectActivity activity, int id, Dialog dialog, Bundle args);
+    void onActionModeFinished(@NonNull AspectActivity activity, ActionMode mode);
 
-    Object onRetainNonConfigurationInstance(AspectActivity activity);
+    void onActionModeStarted(@NonNull AspectActivity activity, ActionMode mode);
+
+    void onActivityReenter(@NonNull AspectActivity activity, int resultCode, Intent data);
+
+    void onAttachedToWindow(@NonNull AspectActivity activity);
+
+    void onAttachFragment(@NonNull AspectActivity activity, Fragment fragment);
+
+    void onBackPressed(@NonNull AspectActivity activity);
+
+    void onConfigurationChanged(@NonNull AspectActivity activity, Configuration newConfig);
+
+    void onContentChanged(@NonNull AspectActivity activity);
+
+    void onContextMenuClosed(@NonNull AspectActivity activity, Menu menu);
+
+    void onCreate(@NonNull AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
+
+    void onCreateContextMenu(@NonNull AspectActivity activity, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo);
+
+    void onCreateNavigateUpTaskStack(@NonNull AspectActivity activity, @NonNull TaskStackBuilder builder);
+
+    void onDetachedFromWindow(@NonNull AspectActivity activity);
+
+    void onEnterAnimationComplete(@NonNull AspectActivity activity);
+
+    void onLowMemory(@NonNull AspectActivity activity);
+
+    void onOptionsMenuClosed(@NonNull AspectActivity activity, Menu menu);
+
+    void onPanelClosed(@NonNull AspectActivity activity, int featureId, Menu menu);
+
+    void onPostCreate(@NonNull AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
+
+    void onPrepareNavigateUpTaskStack(@NonNull AspectActivity activity, TaskStackBuilder builder);
+
+    void onProvideAssistData(@NonNull AspectActivity activity, Bundle data);
+
+    void onRestoreInstanceState(@NonNull AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
+
+    void onTrimMemory(@NonNull AspectActivity activity, int level);
+
+    void onUserInteraction(@NonNull AspectActivity activity);
+
+    void onVisibleBehindCanceled(@NonNull AspectActivity activity);
+
+    void onWindowAttributesChanged(@NonNull AspectActivity activity, WindowManager.LayoutParams params);
+
+    void onWindowFocusChanged(@NonNull AspectActivity activity, boolean hasFocus);
+
+    Dialog onCreateDialog(@NonNull AspectActivity activity, int id);
+
+    @Nullable
+    Dialog onCreateDialog(@NonNull AspectActivity activity, int id, Bundle args);
+
+    void onPrepareDialog(@NonNull AspectActivity activity, int id, @NonNull Dialog dialog);
+
+    void onPrepareDialog(@NonNull AspectActivity activity, int id, @NonNull Dialog dialog, Bundle args);
+
+    Object onRetainNonConfigurationInstance(@NonNull AspectActivity activity);
 }

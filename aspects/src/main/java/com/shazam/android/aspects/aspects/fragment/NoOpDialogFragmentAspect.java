@@ -40,137 +40,137 @@ import com.shazam.android.aspects.base.fragment.AspectDialogFragment;
 public class NoOpDialogFragmentAspect implements DialogFragmentAspect {
     
     @Override
-    public Animator onCreateAnimator(AspectDialogFragment fragment, int transit, boolean enter, int nextAnim) {
+    public Animator onCreateAnimator(@NonNull AspectDialogFragment fragment, int transit, boolean enter, int nextAnim) {
         return null;
     }
 
     @Override
-    public boolean onContextItemSelected(AspectDialogFragment fragment, MenuItem item) {
+    public boolean onContextItemSelected(@NonNull AspectDialogFragment fragment, MenuItem item) {
         return false;
     }
 
     @Override
-    public boolean onOptionsItemSelected(AspectDialogFragment fragment, MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull AspectDialogFragment fragment, MenuItem item) {
         return false;
     }
 
     @Override
-    public Dialog onCreateDialog(AspectDialogFragment fragment, Bundle savedInstanceState) {
+    public Dialog onCreateDialog(@NonNull AspectDialogFragment fragment, Bundle savedInstanceState) {
         return null;
     }
 
     @Nullable
     @Override
-    public View onCreateView(AspectDialogFragment fragment, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull AspectDialogFragment fragment, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return null;
     }
 
     @Override
-    public void onActivityCreated(AspectDialogFragment fragment, Bundle savedInstanceState) {
+    public void onActivityCreated(@NonNull AspectDialogFragment fragment, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onActivityResult(AspectDialogFragment fragment, int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(@NonNull AspectDialogFragment fragment, int requestCode, int resultCode, Intent data) {
     }
 
     @Override
-    public void onAttach(AspectDialogFragment fragment, Activity activity) {
+    public void onAttach(@NonNull AspectDialogFragment fragment, Activity activity) {
     }
 
     @Override
-    public void onCancel(AspectDialogFragment fragment, DialogInterface dialog) {
+    public void onCancel(@NonNull AspectDialogFragment fragment, DialogInterface dialog) {
     }
 
     @Override
-    public void onConfigurationChanged(AspectDialogFragment fragment, Configuration newConfig) {
+    public void onConfigurationChanged(@NonNull AspectDialogFragment fragment, Configuration newConfig) {
     }
 
     @Override
-    public void onCreate(AspectDialogFragment fragment, Bundle savedInstanceState) {
+    public void onCreate(@NonNull AspectDialogFragment fragment, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onCreateContextMenu(AspectDialogFragment fragment, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+    public void onCreateContextMenu(@NonNull AspectDialogFragment fragment, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
     }
 
     @Override
-    public void onCreateOptionsMenu(AspectDialogFragment fragment, Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NonNull AspectDialogFragment fragment, Menu menu, MenuInflater inflater) {
     }
 
     @Override
-    public void onDestroy(AspectDialogFragment fragment) {
+    public void onDestroy(@NonNull AspectDialogFragment fragment) {
     }
 
     @Override
-    public void onDestroyOptionsMenu(AspectDialogFragment fragment) {
+    public void onDestroyOptionsMenu(@NonNull AspectDialogFragment fragment) {
     }
 
     @Override
-    public void onDestroyView(AspectDialogFragment fragment) {
+    public void onDestroyView(@NonNull AspectDialogFragment fragment) {
     }
 
     @Override
-    public void onDetach(AspectDialogFragment fragment) {
+    public void onDetach(@NonNull AspectDialogFragment fragment) {
     }
 
     @Override
-    public void onDismiss(AspectDialogFragment fragment, DialogInterface dialog) {
+    public void onDismiss(@NonNull AspectDialogFragment fragment, DialogInterface dialog) {
     }
 
     @Override
-    public void onSaveInstanceState(AspectDialogFragment fragment, Bundle outState) {
+    public void onSaveInstanceState(@NonNull AspectDialogFragment fragment, @NonNull Bundle outState) {
     }
 
     @Override
-    public void onStart(AspectDialogFragment fragment) {
+    public void onStart(@NonNull AspectDialogFragment fragment) {
     }
 
     @Override
-    public void onStop(AspectDialogFragment fragment) {
+    public void onStop(@NonNull AspectDialogFragment fragment) {
     }
 
     @Override
-    public void onHiddenChanged(AspectDialogFragment fragment, boolean hidden) {
+    public void onHiddenChanged(@NonNull AspectDialogFragment fragment, boolean hidden) {
     }
 
     @Override
-    public void onInflate(AspectDialogFragment fragment, Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
+    public void onInflate(@NonNull AspectDialogFragment fragment, Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onInflate(AspectDialogFragment fragment, AttributeSet attrs, Bundle savedInstanceState) {
+    public void onInflate(@NonNull AspectDialogFragment fragment, AttributeSet attrs, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onLowMemory(AspectDialogFragment fragment) {
+    public void onLowMemory(@NonNull AspectDialogFragment fragment) {
     }
 
     @Override
-    public void onOptionsMenuClosed(AspectDialogFragment fragment, Menu menu) {
+    public void onOptionsMenuClosed(@NonNull AspectDialogFragment fragment, Menu menu) {
     }
 
     @Override
-    public void onPause(AspectDialogFragment fragment) {
+    public void onPause(@NonNull AspectDialogFragment fragment) {
     }
 
     @Override
-    public void onPrepareOptionsMenu(AspectDialogFragment fragment, Menu menu) {
+    public void onPrepareOptionsMenu(@NonNull AspectDialogFragment fragment, Menu menu) {
     }
 
     @Override
-    public void onResume(AspectDialogFragment fragment) {
+    public void onResume(@NonNull AspectDialogFragment fragment) {
     }
 
     @Override
-    public void onTrimMemory(AspectDialogFragment fragment, int level) {
+    public void onTrimMemory(@NonNull AspectDialogFragment fragment, int level) {
     }
 
     @Override
-    public void onViewCreated(AspectDialogFragment fragment, View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull AspectDialogFragment fragment, View view, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onViewStateRestored(AspectDialogFragment fragment, Bundle savedInstanceState) {
+    public void onViewStateRestored(@NonNull AspectDialogFragment fragment, Bundle savedInstanceState) {
     }
 
     @NonNull

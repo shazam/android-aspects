@@ -24,6 +24,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.ActionMode;
@@ -57,124 +58,124 @@ public class AspectActivityDispatcher {
         this.activityAspects = aspectsProvider.getAspects();
     }
 
-    public static AspectActivityDispatcher create(AspectActivity activity) {
+    public static AspectActivityDispatcher create(@NonNull AspectActivity activity) {
         return new AspectActivityDispatcher(providerFor(activity));
     }
 
-    private static AspectsProvider<ActivityAspect> providerFor(AspectActivity activity) {
+    private static AspectsProvider<ActivityAspect> providerFor(@NonNull AspectActivity activity) {
         return annotatedAspectsFrom(activity, ActivityAspect.class, AspectActivity.class);
     }
 
-    public void dispatchOnSaveInstanceState(AspectActivity activity, Bundle outState, PersistableBundle outPersistentState) {
+    public void dispatchOnSaveInstanceState(@NonNull AspectActivity activity, Bundle outState, PersistableBundle outPersistentState) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onSaveInstanceState(activity, outState, outPersistentState);
         }
     }
 
-    public void dispatchOnActivityResult(AspectActivity activity, int requestCode, int resultCode, Intent data) {
+    public void dispatchOnActivityResult(@NonNull AspectActivity activity, int requestCode, int resultCode, Intent data) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onActivityResult(activity, requestCode, resultCode, data);
         }
     }
 
-    public void dispatchOnApplyThemeResource(AspectActivity activity, Resources.Theme theme, int resid, boolean first) {
+    public void dispatchOnApplyThemeResource(@NonNull AspectActivity activity, @NonNull Resources.Theme theme, int resid, boolean first) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onApplyThemeResource(activity, theme, resid, first);
         }
     }
 
-    public void dispatchOnChildTitleChanged(AspectActivity activity, Activity childActivity, CharSequence title) {
+    public void dispatchOnChildTitleChanged(@NonNull AspectActivity activity, Activity childActivity, CharSequence title) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onChildTitleChanged(activity, childActivity, title);
         }
     }
 
-    public void dispatchOnCreate(AspectActivity activity, Bundle savedInstanceState) {
+    public void dispatchOnCreate(@NonNull AspectActivity activity, Bundle savedInstanceState) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onCreate(activity, savedInstanceState);
         }
     }
 
-    public void dispatchOnDestroy(AspectActivity activity) {
+    public void dispatchOnDestroy(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onDestroy(activity);
         }
     }
 
-    public void dispatchOnNewIntent(AspectActivity activity, Intent intent) {
+    public void dispatchOnNewIntent(@NonNull AspectActivity activity, Intent intent) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onNewIntent(activity, intent);
         }
     }
 
-    public void dispatchOnPause(AspectActivity activity) {
+    public void dispatchOnPause(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onPause(activity);
         }
     }
 
-    public void dispatchOnPostCreate(AspectActivity activity, Bundle savedInstanceState) {
+    public void dispatchOnPostCreate(@NonNull AspectActivity activity, Bundle savedInstanceState) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onPostCreate(activity, savedInstanceState);
         }
     }
 
-    public void dispatchOnPostResume(AspectActivity activity) {
+    public void dispatchOnPostResume(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onPostResume(activity);
         }
     }
 
-    public void dispatchOnRestart(AspectActivity activity) {
+    public void dispatchOnRestart(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onRestart(activity);
         }
     }
 
-    public void dispatchOnRestoreInstanceState(AspectActivity activity, Bundle savedInstanceState) {
+    public void dispatchOnRestoreInstanceState(@NonNull AspectActivity activity, @NonNull Bundle savedInstanceState) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onRestoreInstanceState(activity, savedInstanceState);
         }
     }
 
-    public void dispatchOnResume(AspectActivity activity) {
+    public void dispatchOnResume(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onResume(activity);
         }
     }
 
-    public void dispatchOnSaveInstanceState(AspectActivity activity, Bundle outState) {
+    public void dispatchOnSaveInstanceState(@NonNull AspectActivity activity, @NonNull Bundle outState) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onSaveInstanceState(activity, outState);
         }
     }
 
-    public void dispatchOnStart(AspectActivity activity) {
+    public void dispatchOnStart(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onStart(activity);
         }
     }
 
-    public void dispatchOnStop(AspectActivity activity) {
+    public void dispatchOnStop(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onStop(activity);
         }
     }
 
-    public void dispatchOnTitleChanged(AspectActivity activity, CharSequence title, int color) {
+    public void dispatchOnTitleChanged(@NonNull AspectActivity activity, CharSequence title, int color) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onTitleChanged(activity, title, color);
         }
     }
 
-    public void dispatchOnUserLeaveHint(AspectActivity activity) {
+    public void dispatchOnUserLeaveHint(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onUserLeaveHint(activity);
         }
     }
 
     @Nullable
-    public ActionMode dispatchOnWindowStartingActionMode(AspectActivity activity, ActionMode.Callback callback) {
+    public ActionMode dispatchOnWindowStartingActionMode(@NonNull AspectActivity activity, ActionMode.Callback callback) {
         for (ActivityAspect aspect : activityAspects) {
             ActionMode actionMode = aspect.onWindowStartingActionMode(activity, callback);
             if (actionMode != null) {
@@ -184,7 +185,7 @@ public class AspectActivityDispatcher {
         return null;
     }
 
-    public boolean dispatchOnContextItemSelected(AspectActivity activity, MenuItem item) {
+    public boolean dispatchOnContextItemSelected(@NonNull AspectActivity activity, MenuItem item) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onContextItemSelected(activity, item)) {
                 return true;
@@ -193,7 +194,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnCreateOptionsMenu(AspectActivity activity, Menu menu) {
+    public boolean dispatchOnCreateOptionsMenu(@NonNull AspectActivity activity, Menu menu) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onCreateOptionsMenu(activity, menu)) {
                 return true;
@@ -202,7 +203,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnCreatePanelMenu(AspectActivity activity, int featureId, Menu menu) {
+    public boolean dispatchOnCreatePanelMenu(@NonNull AspectActivity activity, int featureId, Menu menu) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onCreatePanelMenu(activity, featureId, menu)) {
                 return true;
@@ -211,7 +212,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnCreateThumbnail(AspectActivity activity, Bitmap outBitmap, Canvas canvas) {
+    public boolean dispatchOnCreateThumbnail(@NonNull AspectActivity activity, Bitmap outBitmap, Canvas canvas) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onCreateThumbnail(activity, outBitmap, canvas)) {
                 return true;
@@ -220,7 +221,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnGenericMotionEvent(AspectActivity activity, MotionEvent event) {
+    public boolean dispatchOnGenericMotionEvent(@NonNull AspectActivity activity, MotionEvent event) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onGenericMotionEvent(activity, event)) {
                 return true;
@@ -229,7 +230,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnKeyDown(AspectActivity activity, int keyCode, KeyEvent event) {
+    public boolean dispatchOnKeyDown(@NonNull AspectActivity activity, int keyCode, @NonNull KeyEvent event) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onKeyDown(activity, keyCode, event)) {
                 return true;
@@ -238,7 +239,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnKeyLongPress(AspectActivity activity, int keyCode, KeyEvent event) {
+    public boolean dispatchOnKeyLongPress(@NonNull AspectActivity activity, int keyCode, KeyEvent event) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onKeyLongPress(activity, keyCode, event)) {
                 return true;
@@ -247,7 +248,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnKeyMultiple(AspectActivity activity, int keyCode, int repeatCount, KeyEvent event) {
+    public boolean dispatchOnKeyMultiple(@NonNull AspectActivity activity, int keyCode, int repeatCount, KeyEvent event) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onKeyMultiple(activity, keyCode, repeatCount, event)) {
                 return true;
@@ -256,7 +257,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnKeyShortcut(AspectActivity activity, int keyCode, KeyEvent event) {
+    public boolean dispatchOnKeyShortcut(@NonNull AspectActivity activity, int keyCode, KeyEvent event) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onKeyShortcut(activity, keyCode, event)) {
                 return true;
@@ -265,7 +266,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnKeyUp(AspectActivity activity, int keyCode, KeyEvent event) {
+    public boolean dispatchOnKeyUp(@NonNull AspectActivity activity, int keyCode, @NonNull KeyEvent event) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onKeyUp(activity, keyCode, event)) {
                 return true;
@@ -274,7 +275,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnMenuItemSelected(AspectActivity activity, int featureId, MenuItem item) {
+    public boolean dispatchOnMenuItemSelected(@NonNull AspectActivity activity, int featureId, @NonNull MenuItem item) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onMenuItemSelected(activity, featureId, item)) {
                 return true;
@@ -283,7 +284,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnMenuOpened(AspectActivity activity, int featureId, Menu menu) {
+    public boolean dispatchOnMenuOpened(@NonNull AspectActivity activity, int featureId, Menu menu) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onMenuOpened(activity, featureId, menu)) {
                 return true;
@@ -292,7 +293,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnNavigateUp(AspectActivity activity) {
+    public boolean dispatchOnNavigateUp(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onNavigateUp(activity)) {
                 return true;
@@ -301,7 +302,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnNavigateUpFromChild(AspectActivity activity, Activity child) {
+    public boolean dispatchOnNavigateUpFromChild(@NonNull AspectActivity activity, Activity child) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onNavigateUpFromChild(activity, child)) {
                 return true;
@@ -310,7 +311,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnOptionsItemSelected(AspectActivity activity, MenuItem item) {
+    public boolean dispatchOnOptionsItemSelected(@NonNull AspectActivity activity, MenuItem item) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onOptionsItemSelected(activity, item)) {
                 return true;
@@ -319,7 +320,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnPrepareOptionsMenu(AspectActivity activity, Menu menu) {
+    public boolean dispatchOnPrepareOptionsMenu(@NonNull AspectActivity activity, Menu menu) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onPrepareOptionsMenu(activity, menu)) {
                 return true;
@@ -328,7 +329,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnPreparePanel(AspectActivity activity, int featureId, View view, Menu menu) {
+    public boolean dispatchOnPreparePanel(@NonNull AspectActivity activity, int featureId, View view, Menu menu) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onPreparePanel(activity, featureId, view, menu)) {
                 return true;
@@ -337,7 +338,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnSearchRequested(AspectActivity activity) {
+    public boolean dispatchOnSearchRequested(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onSearchRequested(activity)) {
                 return true;
@@ -346,7 +347,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnTouchEvent(AspectActivity activity, MotionEvent event) {
+    public boolean dispatchOnTouchEvent(@NonNull AspectActivity activity, MotionEvent event) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onTouchEvent(activity, event)) {
                 return true;
@@ -355,7 +356,7 @@ public class AspectActivityDispatcher {
         return false;
     }
 
-    public boolean dispatchOnTrackballEvent(AspectActivity activity, MotionEvent event) {
+    public boolean dispatchOnTrackballEvent(@NonNull AspectActivity activity, MotionEvent event) {
         for (ActivityAspect aspect : activityAspects) {
             if (aspect.onTrackballEvent(activity, event)) {
                 return true;
@@ -365,7 +366,7 @@ public class AspectActivityDispatcher {
     }
 
     @Nullable
-    public CharSequence dispatchOnCreateDescription(AspectActivity activity) {
+    public CharSequence dispatchOnCreateDescription(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             CharSequence description = aspect.onCreateDescription(activity);
             if (description != null) {
@@ -376,7 +377,7 @@ public class AspectActivityDispatcher {
     }
 
     @Nullable
-    public View dispatchOnCreatePanelView(AspectActivity activity, int featureId) {
+    public View dispatchOnCreatePanelView(@NonNull AspectActivity activity, int featureId) {
         for (ActivityAspect aspect : activityAspects) {
             View panelView = aspect.onCreatePanelView(activity, featureId);
             if (panelView != null) {
@@ -387,7 +388,7 @@ public class AspectActivityDispatcher {
     }
 
     @Nullable
-    public View dispatchOnCreateView(AspectActivity activity, String name, Context context, AttributeSet attrs) {
+    public View dispatchOnCreateView(@NonNull AspectActivity activity, String name, Context context, AttributeSet attrs) {
         for (ActivityAspect aspect : activityAspects) {
             View view = aspect.onCreateView(activity, name, context, attrs);
             if (view != null) {
@@ -397,7 +398,7 @@ public class AspectActivityDispatcher {
         return null;
     }
 
-    public View dispatchOnCreateView(AspectActivity activity, View parent, String name, Context context, AttributeSet attrs) {
+    public View dispatchOnCreateView(@NonNull AspectActivity activity, View parent, String name, @NonNull Context context, @NonNull AttributeSet attrs) {
         for (ActivityAspect aspect : activityAspects) {
             View view = aspect.onCreateView(activity, parent, name, context, attrs);
             if (view != null) {
@@ -407,163 +408,163 @@ public class AspectActivityDispatcher {
         return null;
     }
 
-    public void dispatchOnActionModeFinished(AspectActivity activity, ActionMode mode) {
+    public void dispatchOnActionModeFinished(@NonNull AspectActivity activity, ActionMode mode) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onActionModeFinished(activity, mode);
         }
     }
 
-    public void dispatchOnActionModeStarted(AspectActivity activity, ActionMode mode) {
+    public void dispatchOnActionModeStarted(@NonNull AspectActivity activity, ActionMode mode) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onActionModeStarted(activity, mode);
         }
     }
 
-    public void dispatchOnActivityReenter(AspectActivity activity, int resultCode, Intent data) {
+    public void dispatchOnActivityReenter(@NonNull AspectActivity activity, int resultCode, Intent data) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onActivityReenter(activity, resultCode, data);
         }
     }
 
-    public void dispatchOnAttachedToWindow(AspectActivity activity) {
+    public void dispatchOnAttachedToWindow(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onAttachedToWindow(activity);
         }
     }
 
-    public void dispatchOnAttachFragment(AspectActivity activity, Fragment fragment) {
+    public void dispatchOnAttachFragment(@NonNull AspectActivity activity, Fragment fragment) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onAttachFragment(activity, fragment);
         }
     }
 
-    public void dispatchOnBackPressed(AspectActivity activity) {
+    public void dispatchOnBackPressed(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onBackPressed(activity);
         }
     }
 
-    public void dispatchOnConfigurationChanged(AspectActivity activity, Configuration newConfig) {
+    public void dispatchOnConfigurationChanged(@NonNull AspectActivity activity, Configuration newConfig) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onConfigurationChanged(activity, newConfig);
         }
     }
 
-    public void dispatchOnContentChanged(AspectActivity activity) {
+    public void dispatchOnContentChanged(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onContentChanged(activity);
         }
     }
 
-    public void dispatchOnContextMenuClosed(AspectActivity activity, Menu menu) {
+    public void dispatchOnContextMenuClosed(@NonNull AspectActivity activity, Menu menu) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onContextMenuClosed(activity, menu);
         }
     }
 
-    public void dispatchOnCreate(AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
+    public void dispatchOnCreate(@NonNull AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onCreate(activity, savedInstanceState, persistentState);
         }
     }
 
-    public void dispatchOnCreateContextMenu(AspectActivity activity, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+    public void dispatchOnCreateContextMenu(@NonNull AspectActivity activity, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onCreateContextMenu(activity, menu, v, menuInfo);
         }
     }
 
-    public void dispatchOnCreateNavigateUpTaskStack(AspectActivity activity, TaskStackBuilder builder) {
+    public void dispatchOnCreateNavigateUpTaskStack(@NonNull AspectActivity activity, @NonNull TaskStackBuilder builder) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onCreateNavigateUpTaskStack(activity, builder);
         }
     }
 
-    public void dispatchOnDetachedFromWindow(AspectActivity activity) {
+    public void dispatchOnDetachedFromWindow(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onDetachedFromWindow(activity);
         }
     }
 
-    public void dispatchOnEnterAnimationComplete(AspectActivity activity) {
+    public void dispatchOnEnterAnimationComplete(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onEnterAnimationComplete(activity);
         }
     }
 
-    public void dispatchOnLowMemory(AspectActivity activity) {
+    public void dispatchOnLowMemory(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onLowMemory(activity);
         }
     }
 
-    public void dispatchOnOptionsMenuClosed(AspectActivity activity, Menu menu) {
+    public void dispatchOnOptionsMenuClosed(@NonNull AspectActivity activity, Menu menu) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onOptionsMenuClosed(activity, menu);
         }
     }
 
-    public void dispatchOnPanelClosed(AspectActivity activity, int featureId, Menu menu) {
+    public void dispatchOnPanelClosed(@NonNull AspectActivity activity, int featureId, Menu menu) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onPanelClosed(activity, featureId, menu);
         }
     }
 
-    public void dispatchOnPostCreate(AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
+    public void dispatchOnPostCreate(@NonNull AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onPostCreate(activity, savedInstanceState, persistentState);
         }
     }
 
-    public void dispatchOnPrepareNavigateUpTaskStack(AspectActivity activity, TaskStackBuilder builder) {
+    public void dispatchOnPrepareNavigateUpTaskStack(@NonNull AspectActivity activity, TaskStackBuilder builder) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onPrepareNavigateUpTaskStack(activity, builder);
         }
     }
 
-    public void dispatchOnProvideAssistData(AspectActivity activity, Bundle data) {
+    public void dispatchOnProvideAssistData(@NonNull AspectActivity activity, Bundle data) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onProvideAssistData(activity, data);
         }
     }
 
-    public void dispatchOnRestoreInstanceState(AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
+    public void dispatchOnRestoreInstanceState(@NonNull AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onRestoreInstanceState(activity, savedInstanceState, persistentState);
         }
     }
 
-    public void dispatchOnTrimMemory(AspectActivity activity, int level) {
+    public void dispatchOnTrimMemory(@NonNull AspectActivity activity, int level) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onTrimMemory(activity, level);
         }
     }
 
-    public void dispatchOnUserInteraction(AspectActivity activity) {
+    public void dispatchOnUserInteraction(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onUserInteraction(activity);
         }
     }
 
-    public void dispatchOnVisibleBehindCanceled(AspectActivity activity) {
+    public void dispatchOnVisibleBehindCanceled(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onVisibleBehindCanceled(activity);
         }
     }
 
-    public void dispatchOnWindowAttributesChanged(AspectActivity activity, WindowManager.LayoutParams params) {
+    public void dispatchOnWindowAttributesChanged(@NonNull AspectActivity activity, WindowManager.LayoutParams params) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onWindowAttributesChanged(activity, params);
         }
     }
 
-    public void dispatchOnWindowFocusChanged(AspectActivity activity, boolean hasFocus) {
+    public void dispatchOnWindowFocusChanged(@NonNull AspectActivity activity, boolean hasFocus) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onWindowFocusChanged(activity, hasFocus);
         }
     }
 
-    public Dialog dispatchOnCreateDialog(AspectActivity activity, int id) {
+    public Dialog dispatchOnCreateDialog(@NonNull AspectActivity activity, int id) {
         for (ActivityAspect aspect : activityAspects) {
             Dialog dialog = aspect.onCreateDialog(activity, id);
             if (dialog != null) {
@@ -574,7 +575,7 @@ public class AspectActivityDispatcher {
     }
 
     @Nullable
-    public Dialog dispatchOnCreateDialog(AspectActivity activity, int id, Bundle args) {
+    public Dialog dispatchOnCreateDialog(@NonNull AspectActivity activity, int id, Bundle args) {
         for (ActivityAspect aspect : activityAspects) {
             Dialog dialog = aspect.onCreateDialog(activity, id, args);
             if (dialog != null) {
@@ -584,19 +585,19 @@ public class AspectActivityDispatcher {
         return null;
     }
 
-    public void dispatchOnPrepareDialog(AspectActivity activity, int id, Dialog dialog) {
+    public void dispatchOnPrepareDialog(@NonNull AspectActivity activity, int id, @NonNull Dialog dialog) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onPrepareDialog(activity, id, dialog);
         }
     }
 
-    public void dispatchOnPrepareDialog(AspectActivity activity, int id, Dialog dialog, Bundle args) {
+    public void dispatchOnPrepareDialog(@NonNull AspectActivity activity, int id, @NonNull Dialog dialog, Bundle args) {
         for (ActivityAspect aspect : activityAspects) {
             aspect.onPrepareDialog(activity, id, dialog, args);
         }
     }
 
-    public Object dispatchOnRetainNonConfigurationInstance(AspectActivity activity) {
+    public Object dispatchOnRetainNonConfigurationInstance(@NonNull AspectActivity activity) {
         for (ActivityAspect aspect : activityAspects) {
             Object instance = aspect.onRetainNonConfigurationInstance(activity);
             if (instance != null) {

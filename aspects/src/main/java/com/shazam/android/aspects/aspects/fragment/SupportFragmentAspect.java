@@ -16,6 +16,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.ContextMenu;
@@ -38,58 +39,58 @@ import com.shazam.android.aspects.base.fragment.AspectSupportFragment;
  */
 public interface SupportFragmentAspect extends Aspect<AspectSupportFragment> {
 
-    Animation onCreateAnimation(AspectSupportFragment fragment, int transit, boolean enter, int nextAnim);
+    Animation onCreateAnimation(@NonNull AspectSupportFragment fragment, int transit, boolean enter, int nextAnim);
 
-    boolean onContextItemSelected(AspectSupportFragment fragment, MenuItem item);
+    boolean onContextItemSelected(@NonNull AspectSupportFragment fragment, MenuItem item);
 
-    boolean onOptionsItemSelected(AspectSupportFragment fragment, MenuItem item);
+    boolean onOptionsItemSelected(@NonNull AspectSupportFragment fragment, MenuItem item);
 
     @Nullable
-    View onCreateView(AspectSupportFragment fragment, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
+    View onCreateView(@NonNull AspectSupportFragment fragment, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
 
-    void onActivityCreated(AspectSupportFragment fragment, Bundle savedInstanceState);
+    void onActivityCreated(@NonNull AspectSupportFragment fragment, @Nullable Bundle savedInstanceState);
 
-    void onActivityResult(AspectSupportFragment fragment, int requestCode, int resultCode, Intent data);
+    void onActivityResult(@NonNull AspectSupportFragment fragment, int requestCode, int resultCode, Intent data);
 
-    void onAttach(AspectSupportFragment fragment, Activity activity);
+    void onAttach(@NonNull AspectSupportFragment fragment, Activity activity);
 
-    void onConfigurationChanged(AspectSupportFragment fragment, Configuration newConfig);
+    void onConfigurationChanged(@NonNull AspectSupportFragment fragment, Configuration newConfig);
 
-    void onCreate(AspectSupportFragment fragment, Bundle savedInstanceState);
+    void onCreate(@NonNull AspectSupportFragment fragment, @Nullable Bundle savedInstanceState);
 
-    void onCreateContextMenu(AspectSupportFragment fragment, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo);
+    void onCreateContextMenu(@NonNull AspectSupportFragment fragment, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo);
 
-    void onCreateOptionsMenu(AspectSupportFragment fragment, Menu menu, MenuInflater inflater);
+    void onCreateOptionsMenu(@NonNull AspectSupportFragment fragment, Menu menu, MenuInflater inflater);
 
-    void onDestroy(AspectSupportFragment fragment);
+    void onDestroy(@NonNull AspectSupportFragment fragment);
 
-    void onDestroyOptionsMenu(AspectSupportFragment fragment);
+    void onDestroyOptionsMenu(@NonNull AspectSupportFragment fragment);
 
-    void onDestroyView(AspectSupportFragment fragment);
+    void onDestroyView(@NonNull AspectSupportFragment fragment);
 
-    void onDetach(AspectSupportFragment fragment);
+    void onDetach(@NonNull AspectSupportFragment fragment);
 
-    void onHiddenChanged(AspectSupportFragment fragment, boolean hidden);
+    void onHiddenChanged(@NonNull AspectSupportFragment fragment, boolean hidden);
 
-    void onInflate(AspectSupportFragment fragment, Activity activity, AttributeSet attrs, Bundle savedInstanceState);
+    void onInflate(@NonNull AspectSupportFragment fragment, Activity activity, AttributeSet attrs, Bundle savedInstanceState);
 
-    void onLowMemory(AspectSupportFragment fragment);
+    void onLowMemory(@NonNull AspectSupportFragment fragment);
 
-    void onOptionsMenuClosed(AspectSupportFragment fragment, Menu menu);
+    void onOptionsMenuClosed(@NonNull AspectSupportFragment fragment, Menu menu);
 
-    void onPause(AspectSupportFragment fragment);
+    void onPause(@NonNull AspectSupportFragment fragment);
 
-    void onPrepareOptionsMenu(AspectSupportFragment fragment, Menu menu);
+    void onPrepareOptionsMenu(@NonNull AspectSupportFragment fragment, Menu menu);
 
-    void onResume(AspectSupportFragment fragment);
+    void onResume(@NonNull AspectSupportFragment fragment);
 
-    void onSaveInstanceState(AspectSupportFragment fragment, Bundle outState);
+    void onSaveInstanceState(@NonNull AspectSupportFragment fragment, Bundle outState);
 
-    void onStart(AspectSupportFragment fragment);
+    void onStart(@NonNull AspectSupportFragment fragment);
 
-    void onStop(AspectSupportFragment fragment);
+    void onStop(@NonNull AspectSupportFragment fragment);
 
-    void onViewCreated(AspectSupportFragment fragment, View view, Bundle savedInstanceState);
+    void onViewCreated(@NonNull AspectSupportFragment fragment, View view, Bundle savedInstanceState);
 
-    void onViewStateRestored(AspectSupportFragment fragment, Bundle savedInstanceState);
+    void onViewStateRestored(@NonNull AspectSupportFragment fragment, Bundle savedInstanceState);
 }

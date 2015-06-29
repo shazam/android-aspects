@@ -1,7 +1,7 @@
 /*
  * Copyright 2014 Shazam Entertainment Limited
  *
- * Licensed under the Apache License, Version 2.0 (AspectSupportDialogFragment fragment, AspectDialogFragment fragment, the "License"); you may not use this file except in compliance with
+ * Licensed under the Apache License, Version 2.0 (@NonNull AspectSupportDialogFragment fragment, AspectDialogFragment fragment, the "License"); you may not use this file except in compliance with
  * the License.
  *
  * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -18,6 +18,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.ContextMenu;
@@ -40,64 +41,64 @@ import com.shazam.android.aspects.base.fragment.AspectSupportDialogFragment;
  */
 public interface SupportDialogFragmentAspect extends Aspect<AspectSupportDialogFragment> {
 
-    void onActivityCreated(AspectSupportDialogFragment fragment, Bundle savedInstanceState);
+    void onActivityCreated(@NonNull AspectSupportDialogFragment fragment, Bundle savedInstanceState);
 
-    void onAttach(AspectSupportDialogFragment fragment, Activity activity);
+    void onAttach(@NonNull AspectSupportDialogFragment fragment, Activity activity);
 
-    void onCancel(AspectSupportDialogFragment fragment, DialogInterface dialog);
+    void onCancel(@NonNull AspectSupportDialogFragment fragment, DialogInterface dialog);
 
-    void onCreate(AspectSupportDialogFragment fragment, @Nullable Bundle savedInstanceState);
+    void onCreate(@NonNull AspectSupportDialogFragment fragment, @Nullable Bundle savedInstanceState);
 
-    Dialog onCreateDialog(AspectSupportDialogFragment fragment, Bundle savedInstanceState);
+    Dialog onCreateDialog(@NonNull AspectSupportDialogFragment fragment, Bundle savedInstanceState);
 
-    void onDestroyView(AspectSupportDialogFragment fragment);
+    void onDestroyView(@NonNull AspectSupportDialogFragment fragment);
 
-    void onDetach(AspectSupportDialogFragment fragment);
+    void onDetach(@NonNull AspectSupportDialogFragment fragment);
 
-    void onDismiss(AspectSupportDialogFragment fragment, DialogInterface dialog);
+    void onDismiss(@NonNull AspectSupportDialogFragment fragment, DialogInterface dialog);
 
-    void onSaveInstanceState(AspectSupportDialogFragment fragment, Bundle outState);
+    void onSaveInstanceState(@NonNull AspectSupportDialogFragment fragment, Bundle outState);
 
-    void onStart(AspectSupportDialogFragment fragment);
+    void onStart(@NonNull AspectSupportDialogFragment fragment);
 
-    void onStop(AspectSupportDialogFragment fragment);
+    void onStop(@NonNull AspectSupportDialogFragment fragment);
 
-    void onActivityResult(AspectSupportDialogFragment fragment, int requestCode, int resultCode, Intent data);
+    void onActivityResult(@NonNull AspectSupportDialogFragment fragment, int requestCode, int resultCode, Intent data);
 
-    void onConfigurationChanged(AspectSupportDialogFragment fragment, Configuration newConfig);
+    void onConfigurationChanged(@NonNull AspectSupportDialogFragment fragment, Configuration newConfig);
 
-    boolean onContextItemSelected(AspectSupportDialogFragment fragment, MenuItem item);
+    boolean onContextItemSelected(@NonNull AspectSupportDialogFragment fragment, MenuItem item);
 
-    Animation onCreateAnimation(AspectSupportDialogFragment fragment, int transit, boolean enter, int nextAnim);
+    Animation onCreateAnimation(@NonNull AspectSupportDialogFragment fragment, int transit, boolean enter, int nextAnim);
 
-    void onCreateContextMenu(AspectSupportDialogFragment fragment, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo);
+    void onCreateContextMenu(@NonNull AspectSupportDialogFragment fragment, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo);
 
-    void onCreateOptionsMenu(AspectSupportDialogFragment fragment, Menu menu, MenuInflater inflater);
+    void onCreateOptionsMenu(@NonNull AspectSupportDialogFragment fragment, Menu menu, MenuInflater inflater);
 
     @Nullable
-    View onCreateView(AspectSupportDialogFragment fragment, LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
+    View onCreateView(@NonNull AspectSupportDialogFragment fragment, LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
 
-    void onDestroy(AspectSupportDialogFragment fragment);
+    void onDestroy(@NonNull AspectSupportDialogFragment fragment);
 
-    void onDestroyOptionsMenu(AspectSupportDialogFragment fragment);
+    void onDestroyOptionsMenu(@NonNull AspectSupportDialogFragment fragment);
 
-    void onHiddenChanged(AspectSupportDialogFragment fragment, boolean hidden);
+    void onHiddenChanged(@NonNull AspectSupportDialogFragment fragment, boolean hidden);
 
-    void onInflate(AspectSupportDialogFragment fragment, Activity activity, AttributeSet attrs, Bundle savedInstanceState);
+    void onInflate(@NonNull AspectSupportDialogFragment fragment, Activity activity, AttributeSet attrs, Bundle savedInstanceState);
 
-    void onLowMemory(AspectSupportDialogFragment fragment);
+    void onLowMemory(@NonNull AspectSupportDialogFragment fragment);
 
-    boolean onOptionsItemSelected(AspectSupportDialogFragment fragment, MenuItem item);
+    boolean onOptionsItemSelected(@NonNull AspectSupportDialogFragment fragment, MenuItem item);
 
-    void onOptionsMenuClosed(AspectSupportDialogFragment fragment, Menu menu);
+    void onOptionsMenuClosed(@NonNull AspectSupportDialogFragment fragment, Menu menu);
 
-    void onPause(AspectSupportDialogFragment fragment);
+    void onPause(@NonNull AspectSupportDialogFragment fragment);
 
-    void onPrepareOptionsMenu(AspectSupportDialogFragment fragment, Menu menu);
+    void onPrepareOptionsMenu(@NonNull AspectSupportDialogFragment fragment, Menu menu);
 
-    void onResume(AspectSupportDialogFragment fragment);
+    void onResume(@NonNull AspectSupportDialogFragment fragment);
 
-    void onViewCreated(AspectSupportDialogFragment fragment, View view, @Nullable Bundle savedInstanceState);
+    void onViewCreated(@NonNull AspectSupportDialogFragment fragment, View view, @Nullable Bundle savedInstanceState);
 
-    void onViewStateRestored(AspectSupportDialogFragment fragment, @Nullable Bundle savedInstanceState);
+    void onViewStateRestored(@NonNull AspectSupportDialogFragment fragment, @Nullable Bundle savedInstanceState);
 }

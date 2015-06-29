@@ -20,6 +20,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.ContextMenu;
@@ -53,15 +54,15 @@ public class AspectDialogFragmentDispatcher {
         this.fragmentAspects = aspectsProvider.getAspects();
     }
 
-    public static AspectDialogFragmentDispatcher create(AspectDialogFragment fragment) {
+    public static AspectDialogFragmentDispatcher create(@NonNull AspectDialogFragment fragment) {
         return new AspectDialogFragmentDispatcher(providerFor(fragment));
     }
 
-    private static AspectsProvider<DialogFragmentAspect> providerFor(AspectDialogFragment fragment) {
+    private static AspectsProvider<DialogFragmentAspect> providerFor(@NonNull AspectDialogFragment fragment) {
         return annotatedAspectsFrom(fragment, DialogFragmentAspect.class, AspectDialogFragment.class);
     }
 
-    public Animator dispatchOnCreateAnimator(AspectDialogFragment fragment, int transit, boolean enter, int nextAnim) {
+    public Animator dispatchOnCreateAnimator(@NonNull AspectDialogFragment fragment, int transit, boolean enter, int nextAnim) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             Animator animator = aspect.onCreateAnimator(fragment, transit, enter, nextAnim);
             if (animator != null) {
@@ -71,7 +72,7 @@ public class AspectDialogFragmentDispatcher {
         return null;
     }
 
-    public boolean dispatchOnContextItemSelected(AspectDialogFragment fragment, MenuItem item) {
+    public boolean dispatchOnContextItemSelected(@NonNull AspectDialogFragment fragment, MenuItem item) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             if (aspect.onContextItemSelected(fragment, item)) {
                 return true;
@@ -80,7 +81,7 @@ public class AspectDialogFragmentDispatcher {
         return false;
     }
 
-    public boolean dispatchOnOptionsItemSelected(AspectDialogFragment fragment, MenuItem item) {
+    public boolean dispatchOnOptionsItemSelected(@NonNull AspectDialogFragment fragment, MenuItem item) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             if (aspect.onOptionsItemSelected(fragment, item)) {
                 return true;
@@ -89,7 +90,7 @@ public class AspectDialogFragmentDispatcher {
         return false;
     }
 
-    public Dialog dispatchOnCreateDialog(AspectDialogFragment fragment, Bundle savedInstanceState) {
+    public Dialog dispatchOnCreateDialog(@NonNull AspectDialogFragment fragment, Bundle savedInstanceState) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             Dialog dialog = aspect.onCreateDialog(fragment, savedInstanceState);
             if (dialog != null) {
@@ -100,7 +101,7 @@ public class AspectDialogFragmentDispatcher {
     }
 
     @Nullable
-    public View dispatchOnCreateView(AspectDialogFragment fragment, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View dispatchOnCreateView(@NonNull AspectDialogFragment fragment, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             View view = aspect.onCreateView(fragment, inflater, container, savedInstanceState);
             if (view != null) {
@@ -110,163 +111,163 @@ public class AspectDialogFragmentDispatcher {
         return null;
     }
 
-    public void dispatchOnActivityCreated(AspectDialogFragment fragment, Bundle savedInstanceState) {
+    public void dispatchOnActivityCreated(@NonNull AspectDialogFragment fragment, Bundle savedInstanceState) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onActivityCreated(fragment, savedInstanceState);
         }
     }
 
-    public void dispatchOnActivityResult(AspectDialogFragment fragment, int requestCode, int resultCode, Intent data) {
+    public void dispatchOnActivityResult(@NonNull AspectDialogFragment fragment, int requestCode, int resultCode, Intent data) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onActivityResult(fragment, requestCode, resultCode, data);
         }
     }
 
-    public void dispatchOnAttach(AspectDialogFragment fragment, Activity activity) {
+    public void dispatchOnAttach(@NonNull AspectDialogFragment fragment, Activity activity) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onAttach(fragment, activity);
         }
     }
 
-    public void dispatchOnCancel(AspectDialogFragment fragment, DialogInterface dialog) {
+    public void dispatchOnCancel(@NonNull AspectDialogFragment fragment, DialogInterface dialog) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onCancel(fragment, dialog);
         }
     }
 
-    public void dispatchOnConfigurationChanged(AspectDialogFragment fragment, Configuration newConfig) {
+    public void dispatchOnConfigurationChanged(@NonNull AspectDialogFragment fragment, Configuration newConfig) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onConfigurationChanged(fragment, newConfig);
         }
     }
 
-    public void dispatchOnCreate(AspectDialogFragment fragment, Bundle savedInstanceState) {
+    public void dispatchOnCreate(@NonNull AspectDialogFragment fragment, Bundle savedInstanceState) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onCreate(fragment, savedInstanceState);
         }
     }
 
-    public void dispatchOnCreateContextMenu(AspectDialogFragment fragment, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+    public void dispatchOnCreateContextMenu(@NonNull AspectDialogFragment fragment, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onCreateContextMenu(fragment, menu, v, menuInfo);
         }
     }
 
-    public void dispatchOnCreateOptionsMenu(AspectDialogFragment fragment, Menu menu, MenuInflater inflater) {
+    public void dispatchOnCreateOptionsMenu(@NonNull AspectDialogFragment fragment, Menu menu, MenuInflater inflater) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onCreateOptionsMenu(fragment, menu, inflater);
         }
     }
 
-    public void dispatchOnDestroy(AspectDialogFragment fragment) {
+    public void dispatchOnDestroy(@NonNull AspectDialogFragment fragment) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onDestroy(fragment);
         }
     }
 
-    public void dispatchOnDestroyOptionsMenu(AspectDialogFragment fragment) {
+    public void dispatchOnDestroyOptionsMenu(@NonNull AspectDialogFragment fragment) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onDestroyOptionsMenu(fragment);
         }
     }
 
-    public void dispatchOnDestroyView(AspectDialogFragment fragment) {
+    public void dispatchOnDestroyView(@NonNull AspectDialogFragment fragment) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onDestroyView(fragment);
         }
     }
 
-    public void dispatchOnDetach(AspectDialogFragment fragment) {
+    public void dispatchOnDetach(@NonNull AspectDialogFragment fragment) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onDetach(fragment);
         }
     }
 
-    public void dispatchOnDismiss(AspectDialogFragment fragment, DialogInterface dialog) {
+    public void dispatchOnDismiss(@NonNull AspectDialogFragment fragment, DialogInterface dialog) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onDismiss(fragment, dialog);
         }
     }
 
-    public void dispatchOnSaveInstanceState(AspectDialogFragment fragment, Bundle outState) {
+    public void dispatchOnSaveInstanceState(@NonNull AspectDialogFragment fragment, @NonNull Bundle outState) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onSaveInstanceState(fragment, outState);
         }
     }
 
-    public void dispatchOnStart(AspectDialogFragment fragment) {
+    public void dispatchOnStart(@NonNull AspectDialogFragment fragment) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onStart(fragment);
         }
     }
 
-    public void dispatchOnStop(AspectDialogFragment fragment) {
+    public void dispatchOnStop(@NonNull AspectDialogFragment fragment) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onStop(fragment);
         }
     }
 
-    public void dispatchOnHiddenChanged(AspectDialogFragment fragment, boolean hidden) {
+    public void dispatchOnHiddenChanged(@NonNull AspectDialogFragment fragment, boolean hidden) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onHiddenChanged(fragment, hidden);
         }
     }
 
-    public void dispatchOnInflate(AspectDialogFragment fragment, Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
+    public void dispatchOnInflate(@NonNull AspectDialogFragment fragment, Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onInflate(fragment, activity, attrs, savedInstanceState);
         }
     }
 
-    public void dispatchOnInflate(AspectDialogFragment fragment, AttributeSet attrs, Bundle savedInstanceState) {
+    public void dispatchOnInflate(@NonNull AspectDialogFragment fragment, AttributeSet attrs, Bundle savedInstanceState) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onInflate(fragment, attrs, savedInstanceState);
         }
     }
 
-    public void dispatchOnLowMemory(AspectDialogFragment fragment) {
+    public void dispatchOnLowMemory(@NonNull AspectDialogFragment fragment) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onLowMemory(fragment);
         }
     }
 
-    public void dispatchOnOptionsMenuClosed(AspectDialogFragment fragment, Menu menu) {
+    public void dispatchOnOptionsMenuClosed(@NonNull AspectDialogFragment fragment, Menu menu) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onOptionsMenuClosed(fragment, menu);
         }
     }
 
-    public void dispatchOnPause(AspectDialogFragment fragment) {
+    public void dispatchOnPause(@NonNull AspectDialogFragment fragment) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onPause(fragment);
         }
     }
 
-    public void dispatchOnPrepareOptionsMenu(AspectDialogFragment fragment, Menu menu) {
+    public void dispatchOnPrepareOptionsMenu(@NonNull AspectDialogFragment fragment, Menu menu) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onPrepareOptionsMenu(fragment, menu);
         }
     }
 
-    public void dispatchOnResume(AspectDialogFragment fragment) {
+    public void dispatchOnResume(@NonNull AspectDialogFragment fragment) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onResume(fragment);
         }
     }
 
-    public void dispatchOnTrimMemory(AspectDialogFragment fragment, int level) {
+    public void dispatchOnTrimMemory(@NonNull AspectDialogFragment fragment, int level) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onTrimMemory(fragment, level);
         }
     }
 
-    public void dispatchOnViewCreated(AspectDialogFragment fragment, View view, Bundle savedInstanceState) {
+    public void dispatchOnViewCreated(@NonNull AspectDialogFragment fragment, View view, Bundle savedInstanceState) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onViewCreated(fragment, view, savedInstanceState);
         }
     }
 
-    public void dispatchOnViewStateRestored(AspectDialogFragment fragment, Bundle savedInstanceState) {
+    public void dispatchOnViewStateRestored(@NonNull AspectDialogFragment fragment, Bundle savedInstanceState) {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onViewStateRestored(fragment, savedInstanceState);
         }

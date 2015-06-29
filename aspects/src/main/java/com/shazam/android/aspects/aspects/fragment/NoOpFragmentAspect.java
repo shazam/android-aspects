@@ -38,124 +38,124 @@ import com.shazam.android.aspects.base.fragment.AspectFragment;
 public class NoOpFragmentAspect implements FragmentAspect {
 
     @Override
-    public Animator onCreateAnimator(AspectFragment fragment, int transit, boolean enter, int nextAnim) {
+    public Animator onCreateAnimator(@NonNull AspectFragment fragment, int transit, boolean enter, int nextAnim) {
         return null;
     }
 
     @Override
-    public boolean onContextItemSelected(AspectFragment fragment, MenuItem item) {
+    public boolean onContextItemSelected(@NonNull AspectFragment fragment, MenuItem item) {
         return false;
     }
 
     @Override
-    public boolean onOptionsItemSelected(AspectFragment fragment, MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull AspectFragment fragment, MenuItem item) {
         return false;
     }
 
     @Nullable
     @Override
-    public View onCreateView(AspectFragment fragment, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull AspectFragment fragment, LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return null;
     }
 
     @Override
-    public void onActivityCreated(AspectFragment fragment, Bundle savedInstanceState) {
+    public void onActivityCreated(@NonNull AspectFragment fragment, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onActivityResult(AspectFragment fragment, int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(@NonNull AspectFragment fragment, int requestCode, int resultCode, Intent data) {
     }
 
     @Override
-    public void onAttach(AspectFragment fragment, Activity activity) {
+    public void onAttach(@NonNull AspectFragment fragment, Activity activity) {
     }
 
     @Override
-    public void onConfigurationChanged(AspectFragment fragment, Configuration newConfig) {
+    public void onConfigurationChanged(@NonNull AspectFragment fragment, Configuration newConfig) {
     }
 
     @Override
-    public void onCreate(AspectFragment fragment, Bundle savedInstanceState) {
+    public void onCreate(@NonNull AspectFragment fragment, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onCreateContextMenu(AspectFragment fragment, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+    public void onCreateContextMenu(@NonNull AspectFragment fragment, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
     }
 
     @Override
-    public void onCreateOptionsMenu(AspectFragment fragment, Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NonNull AspectFragment fragment, Menu menu, MenuInflater inflater) {
     }
 
     @Override
-    public void onDestroy(AspectFragment fragment) {
+    public void onDestroy(@NonNull AspectFragment fragment) {
     }
 
     @Override
-    public void onDestroyOptionsMenu(AspectFragment fragment) {
+    public void onDestroyOptionsMenu(@NonNull AspectFragment fragment) {
     }
 
     @Override
-    public void onDestroyView(AspectFragment fragment) {
+    public void onDestroyView(@NonNull AspectFragment fragment) {
     }
 
     @Override
-    public void onDetach(AspectFragment fragment) {
+    public void onDetach(@NonNull AspectFragment fragment) {
     }
 
     @Override
-    public void onHiddenChanged(AspectFragment fragment, boolean hidden) {
+    public void onHiddenChanged(@NonNull AspectFragment fragment, boolean hidden) {
     }
 
     @Override
-    public void onInflate(AspectFragment fragment, Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
+    public void onInflate(@NonNull AspectFragment fragment, Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onLowMemory(AspectFragment fragment) {
+    public void onLowMemory(@NonNull AspectFragment fragment) {
     }
 
     @Override
-    public void onInflate(AspectFragment fragment, AttributeSet attrs, Bundle savedInstanceState) {
+    public void onInflate(@NonNull AspectFragment fragment, AttributeSet attrs, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onOptionsMenuClosed(AspectFragment fragment, Menu menu) {
+    public void onOptionsMenuClosed(@NonNull AspectFragment fragment, Menu menu) {
     }
 
     @Override
-    public void onPause(AspectFragment fragment) {
+    public void onPause(@NonNull AspectFragment fragment) {
     }
 
     @Override
-    public void onPrepareOptionsMenu(AspectFragment fragment, Menu menu) {
+    public void onPrepareOptionsMenu(@NonNull AspectFragment fragment, Menu menu) {
     }
 
     @Override
-    public void onResume(AspectFragment fragment) {
+    public void onResume(@NonNull AspectFragment fragment) {
     }
 
     @Override
-    public void onSaveInstanceState(AspectFragment fragment, Bundle outState) {
+    public void onSaveInstanceState(@NonNull AspectFragment fragment, Bundle outState) {
     }
 
     @Override
-    public void onStart(AspectFragment fragment) {
+    public void onStart(@NonNull AspectFragment fragment) {
     }
 
     @Override
-    public void onStop(AspectFragment fragment) {
+    public void onStop(@NonNull AspectFragment fragment) {
     }
 
     @Override
-    public void onTrimMemory(AspectFragment fragment, int level) {
+    public void onTrimMemory(@NonNull AspectFragment fragment, int level) {
     }
 
     @Override
-    public void onViewCreated(AspectFragment fragment, View view, Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull AspectFragment fragment, View view, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onViewStateRestored(AspectFragment fragment, Bundle savedInstanceState) {
+    public void onViewStateRestored(@NonNull AspectFragment fragment, Bundle savedInstanceState) {
     }
 
     @NonNull

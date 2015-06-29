@@ -24,6 +24,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.ActionMode;
@@ -46,161 +47,161 @@ import com.shazam.android.aspects.aspects.Aspect;
  */
 public interface SupportActivityAspect extends Aspect<AspectFragmentActivity> {
 
-    void onPrepareDialog(AspectFragmentActivity activity, int id, Dialog dialog);
+    void onPrepareDialog(@NonNull AspectFragmentActivity activity, int id, @NonNull Dialog dialog);
 
-    void onPrepareDialog(AspectFragmentActivity activity, int id, Dialog dialog, Bundle args);
+    void onPrepareDialog(@NonNull AspectFragmentActivity activity, int id, @NonNull Dialog dialog, Bundle args);
 
-    Dialog onCreateDialog(AspectFragmentActivity activity, int id);
-
-    @Nullable
-    Dialog onCreateDialog(AspectFragmentActivity activity, int id, Bundle args);
-
-    void onApplyThemeResource(AspectFragmentActivity activity, Resources.Theme theme, int resid, boolean first);
-
-    void onPostCreate(AspectFragmentActivity activity, Bundle savedInstanceState);
-
-    void onChildTitleChanged(AspectFragmentActivity activity, Activity childActivity, CharSequence title);
-
-    void onRestart(AspectFragmentActivity activity);
-
-    void onRestoreInstanceState(AspectFragmentActivity activity, Bundle savedInstanceState);
-
-    void onTitleChanged(AspectFragmentActivity activity, CharSequence title, int color);
-
-    void onUserLeaveHint(AspectFragmentActivity activity);
+    Dialog onCreateDialog(@NonNull AspectFragmentActivity activity, int id);
 
     @Nullable
-    ActionMode onWindowStartingActionMode(AspectFragmentActivity activity, ActionMode.Callback callback);
+    Dialog onCreateDialog(@NonNull AspectFragmentActivity activity, int id, Bundle args);
 
-    boolean onContextItemSelected(AspectFragmentActivity activity, MenuItem item);
+    void onApplyThemeResource(@NonNull AspectFragmentActivity activity, @NonNull Resources.Theme theme, int resid, boolean first);
 
-    boolean onCreateOptionsMenu(AspectFragmentActivity activity, Menu menu);
+    void onPostCreate(@NonNull AspectFragmentActivity activity, Bundle savedInstanceState);
 
-    boolean onCreateThumbnail(AspectFragmentActivity activity, Bitmap outBitmap, Canvas canvas);
+    void onChildTitleChanged(@NonNull AspectFragmentActivity activity, Activity childActivity, CharSequence title);
 
-    boolean onGenericMotionEvent(AspectFragmentActivity activity, MotionEvent event);
+    void onRestart(@NonNull AspectFragmentActivity activity);
 
-    boolean onKeyLongPress(AspectFragmentActivity activity, int keyCode, KeyEvent event);
+    void onRestoreInstanceState(@NonNull AspectFragmentActivity activity, @NonNull Bundle savedInstanceState);
 
-    boolean onKeyMultiple(AspectFragmentActivity activity, int keyCode, int repeatCount, KeyEvent event);
+    void onTitleChanged(@NonNull AspectFragmentActivity activity, CharSequence title, int color);
 
-    boolean onKeyShortcut(AspectFragmentActivity activity, int keyCode, KeyEvent event);
-
-    boolean onKeyUp(AspectFragmentActivity activity, int keyCode, KeyEvent event);
-
-    boolean onMenuOpened(AspectFragmentActivity activity, int featureId, Menu menu);
-
-    boolean onNavigateUp(AspectFragmentActivity activity);
-
-    boolean onNavigateUpFromChild(AspectFragmentActivity activity, Activity child);
-
-    boolean onOptionsItemSelected(AspectFragmentActivity activity, MenuItem item);
-
-    boolean onPrepareOptionsMenu(AspectFragmentActivity activity, Menu menu);
-
-    boolean onSearchRequested(AspectFragmentActivity activity);
-
-    boolean onTouchEvent(AspectFragmentActivity activity, MotionEvent event);
-
-    boolean onTrackballEvent(AspectFragmentActivity activity, MotionEvent event);
+    void onUserLeaveHint(@NonNull AspectFragmentActivity activity);
 
     @Nullable
-    CharSequence onCreateDescription(AspectFragmentActivity activity);
+    ActionMode onWindowStartingActionMode(@NonNull AspectFragmentActivity activity, ActionMode.Callback callback);
+
+    boolean onContextItemSelected(@NonNull AspectFragmentActivity activity, MenuItem item);
+
+    boolean onCreateOptionsMenu(@NonNull AspectFragmentActivity activity, Menu menu);
+
+    boolean onCreateThumbnail(@NonNull AspectFragmentActivity activity, Bitmap outBitmap, Canvas canvas);
+
+    boolean onGenericMotionEvent(@NonNull AspectFragmentActivity activity, MotionEvent event);
+
+    boolean onKeyLongPress(@NonNull AspectFragmentActivity activity, int keyCode, KeyEvent event);
+
+    boolean onKeyMultiple(@NonNull AspectFragmentActivity activity, int keyCode, int repeatCount, KeyEvent event);
+
+    boolean onKeyShortcut(@NonNull AspectFragmentActivity activity, int keyCode, KeyEvent event);
+
+    boolean onKeyUp(@NonNull AspectFragmentActivity activity, int keyCode, @NonNull KeyEvent event);
+
+    boolean onMenuOpened(@NonNull AspectFragmentActivity activity, int featureId, Menu menu);
+
+    boolean onNavigateUp(@NonNull AspectFragmentActivity activity);
+
+    boolean onNavigateUpFromChild(@NonNull AspectFragmentActivity activity, Activity child);
+
+    boolean onOptionsItemSelected(@NonNull AspectFragmentActivity activity, MenuItem item);
+
+    boolean onPrepareOptionsMenu(@NonNull AspectFragmentActivity activity, Menu menu);
+
+    boolean onSearchRequested(@NonNull AspectFragmentActivity activity);
+
+    boolean onTouchEvent(@NonNull AspectFragmentActivity activity, MotionEvent event);
+
+    boolean onTrackballEvent(@NonNull AspectFragmentActivity activity, MotionEvent event);
 
     @Nullable
-    View onCreatePanelView(AspectFragmentActivity activity, int featureId);
+    CharSequence onCreateDescription(@NonNull AspectFragmentActivity activity);
 
-    View onCreateView(AspectFragmentActivity activity, View parent, String name, Context context, AttributeSet attrs);
+    @Nullable
+    View onCreatePanelView(@NonNull AspectFragmentActivity activity, int featureId);
 
-    void onActionModeFinished(AspectFragmentActivity activity, ActionMode mode);
+    View onCreateView(@NonNull AspectFragmentActivity activity, View parent, String name, @NonNull Context context, @NonNull AttributeSet attrs);
 
-    View onCreateView(AspectFragmentActivity activity, String name, Context context, AttributeSet attrs);
+    void onActionModeFinished(@NonNull AspectFragmentActivity activity, ActionMode mode);
 
-    void onActionModeStarted(AspectFragmentActivity activity, ActionMode mode);
+    View onCreateView(@NonNull AspectFragmentActivity activity, String name, @NonNull Context context, @NonNull AttributeSet attrs);
 
-    void onActivityReenter(AspectFragmentActivity activity, int resultCode, Intent data);
+    void onActionModeStarted(@NonNull AspectFragmentActivity activity, ActionMode mode);
 
-    void onAttachedToWindow(AspectFragmentActivity activity);
+    void onActivityReenter(@NonNull AspectFragmentActivity activity, int resultCode, Intent data);
 
-    void onAttachFragment(AspectFragmentActivity activity, Fragment fragment);
+    void onAttachedToWindow(@NonNull AspectFragmentActivity activity);
 
-    void onAttachFragment(AspectFragmentActivity activity, android.support.v4.app.Fragment fragment);
+    void onAttachFragment(@NonNull AspectFragmentActivity activity, Fragment fragment);
 
-    void onContentChanged(AspectFragmentActivity activity);
+    void onAttachFragment(@NonNull AspectFragmentActivity activity, android.support.v4.app.Fragment fragment);
 
-    void onContextMenuClosed(AspectFragmentActivity activity, Menu menu);
+    void onContentChanged(@NonNull AspectFragmentActivity activity);
 
-    void onCreate(AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
+    void onContextMenuClosed(@NonNull AspectFragmentActivity activity, Menu menu);
 
-    void onCreateContextMenu(AspectFragmentActivity activity, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo);
+    void onCreate(@NonNull AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
 
-    void onCreateNavigateUpTaskStack(AspectFragmentActivity activity, TaskStackBuilder builder);
+    void onCreateContextMenu(@NonNull AspectFragmentActivity activity, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo);
 
-    void onDetachedFromWindow(AspectFragmentActivity activity);
+    void onCreateNavigateUpTaskStack(@NonNull AspectFragmentActivity activity, @NonNull TaskStackBuilder builder);
 
-    void onEnterAnimationComplete(AspectFragmentActivity activity);
+    void onDetachedFromWindow(@NonNull AspectFragmentActivity activity);
 
-    void onOptionsMenuClosed(AspectFragmentActivity activity, Menu menu);
+    void onEnterAnimationComplete(@NonNull AspectFragmentActivity activity);
 
-    void onPostCreate(AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
+    void onOptionsMenuClosed(@NonNull AspectFragmentActivity activity, Menu menu);
 
-    void onPrepareNavigateUpTaskStack(AspectFragmentActivity activity, TaskStackBuilder builder);
+    void onPostCreate(@NonNull AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
 
-    void onProvideAssistData(AspectFragmentActivity activity, Bundle data);
+    void onPrepareNavigateUpTaskStack(@NonNull AspectFragmentActivity activity, TaskStackBuilder builder);
 
-    void onRestoreInstanceState(AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
+    void onProvideAssistData(@NonNull AspectFragmentActivity activity, Bundle data);
 
-    void onSaveInstanceState(AspectFragmentActivity activity, Bundle outState, PersistableBundle outPersistentState);
+    void onRestoreInstanceState(@NonNull AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState);
 
-    void onTrimMemory(AspectFragmentActivity activity, int level);
+    void onSaveInstanceState(@NonNull AspectFragmentActivity activity, Bundle outState, PersistableBundle outPersistentState);
 
-    void onUserInteraction(AspectFragmentActivity activity);
+    void onTrimMemory(@NonNull AspectFragmentActivity activity, int level);
 
-    void onVisibleBehindCanceled(AspectFragmentActivity activity);
+    void onUserInteraction(@NonNull AspectFragmentActivity activity);
 
-    void onWindowAttributesChanged(AspectFragmentActivity activity, WindowManager.LayoutParams params);
+    void onVisibleBehindCanceled(@NonNull AspectFragmentActivity activity);
 
-    void onWindowFocusChanged(AspectFragmentActivity activity, boolean hasFocus);
+    void onWindowAttributesChanged(@NonNull AspectFragmentActivity activity, WindowManager.LayoutParams params);
 
-    boolean onPrepareOptionsPanel(AspectFragmentActivity activity, View view, Menu menu);
+    void onWindowFocusChanged(@NonNull AspectFragmentActivity activity, boolean hasFocus);
 
-    void onActivityResult(AspectFragmentActivity activity, int requestCode, int resultCode, Intent data);
+    boolean onPrepareOptionsPanel(@NonNull AspectFragmentActivity activity, View view, Menu menu);
 
-    void onCreate(AspectFragmentActivity activity, Bundle savedInstanceState);
+    void onActivityResult(@NonNull AspectFragmentActivity activity, int requestCode, int resultCode, Intent data);
 
-    void onDestroy(AspectFragmentActivity activity);
+    void onCreate(@NonNull AspectFragmentActivity activity, @Nullable Bundle savedInstanceState);
 
-    void onNewIntent(AspectFragmentActivity activity, Intent intent);
+    void onDestroy(@NonNull AspectFragmentActivity activity);
 
-    void onPause(AspectFragmentActivity activity);
+    void onNewIntent(@NonNull AspectFragmentActivity activity, Intent intent);
 
-    void onPostResume(AspectFragmentActivity activity);
+    void onPause(@NonNull AspectFragmentActivity activity);
 
-    void onResume(AspectFragmentActivity activity);
+    void onPostResume(@NonNull AspectFragmentActivity activity);
 
-    void onResumeFragments(AspectFragmentActivity activity);
+    void onResume(@NonNull AspectFragmentActivity activity);
 
-    void onSaveInstanceState(AspectFragmentActivity activity, Bundle outState);
+    void onResumeFragments(@NonNull AspectFragmentActivity activity);
 
-    void onStart(AspectFragmentActivity activity);
+    void onSaveInstanceState(@NonNull AspectFragmentActivity activity, Bundle outState);
 
-    void onStop(AspectFragmentActivity activity);
+    void onStart(@NonNull AspectFragmentActivity activity);
 
-    boolean onCreatePanelMenu(AspectFragmentActivity activity, int featureId, Menu menu);
+    void onStop(@NonNull AspectFragmentActivity activity);
 
-    boolean onKeyDown(AspectFragmentActivity activity, int keyCode, KeyEvent event);
+    boolean onCreatePanelMenu(@NonNull AspectFragmentActivity activity, int featureId, Menu menu);
 
-    boolean onMenuItemSelected(AspectFragmentActivity activity, int featureId, MenuItem item);
+    boolean onKeyDown(@NonNull AspectFragmentActivity activity, int keyCode, KeyEvent event);
 
-    boolean onPreparePanel(AspectFragmentActivity activity, int featureId, View view, Menu menu);
+    boolean onMenuItemSelected(@NonNull AspectFragmentActivity activity, int featureId, MenuItem item);
 
-    Object onRetainCustomNonConfigurationInstance(AspectFragmentActivity activity);
+    boolean onPreparePanel(@NonNull AspectFragmentActivity activity, int featureId, View view, Menu menu);
 
-    void onBackPressed(AspectFragmentActivity activity);
+    Object onRetainCustomNonConfigurationInstance(@NonNull AspectFragmentActivity activity);
 
-    void onConfigurationChanged(AspectFragmentActivity activity, Configuration newConfig);
+    void onBackPressed(@NonNull AspectFragmentActivity activity);
 
-    void onLowMemory(AspectFragmentActivity activity);
+    void onConfigurationChanged(@NonNull AspectFragmentActivity activity, Configuration newConfig);
 
-    void onPanelClosed(AspectFragmentActivity activity, int featureId, Menu menu);
+    void onLowMemory(@NonNull AspectFragmentActivity activity);
+
+    void onPanelClosed(@NonNull AspectFragmentActivity activity, int featureId, Menu menu);
 }

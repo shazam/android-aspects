@@ -46,331 +46,331 @@ import com.shazam.android.aspects.base.activity.AspectActivity;
 public class NoOpActivityAspect implements ActivityAspect {
 
     @Override
-    public void onSaveInstanceState(AspectActivity activity, Bundle outState, PersistableBundle outPersistentState) {
+    public void onSaveInstanceState(@NonNull AspectActivity activity, Bundle outState, PersistableBundle outPersistentState) {
     }
 
     @Override
-    public void onActivityResult(AspectActivity activity, int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(@NonNull AspectActivity activity, int requestCode, int resultCode, Intent data) {
     }
 
     @Override
-    public void onApplyThemeResource(AspectActivity activity, Resources.Theme theme, int resid, boolean first) {
+    public void onApplyThemeResource(@NonNull AspectActivity activity, @NonNull Resources.Theme theme, int resid, boolean first) {
     }
 
     @Override
-    public void onChildTitleChanged(AspectActivity activity, Activity childActivity, CharSequence title) {
+    public void onChildTitleChanged(@NonNull AspectActivity activity, Activity childActivity, CharSequence title) {
     }
 
     @Override
-    public void onCreate(AspectActivity activity, Bundle savedInstanceState) {
+    public void onCreate(@NonNull AspectActivity activity, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onDestroy(AspectActivity activity) {
+    public void onDestroy(@NonNull AspectActivity activity) {
     }
 
     @Override
-    public void onNewIntent(AspectActivity activity, Intent intent) {
+    public void onNewIntent(@NonNull AspectActivity activity, Intent intent) {
     }
 
     @Override
-    public void onPause(AspectActivity activity) {
+    public void onPause(@NonNull AspectActivity activity) {
     }
 
     @Override
-    public void onPostCreate(AspectActivity activity, Bundle savedInstanceState) {
+    public void onPostCreate(@NonNull AspectActivity activity, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onPostResume(AspectActivity activity) {
+    public void onPostResume(@NonNull AspectActivity activity) {
     }
 
     @Override
-    public void onRestart(AspectActivity activity) {
+    public void onRestart(@NonNull AspectActivity activity) {
     }
 
     @Override
-    public void onRestoreInstanceState(AspectActivity activity, Bundle savedInstanceState) {
+    public void onRestoreInstanceState(@NonNull AspectActivity activity, @NonNull Bundle savedInstanceState) {
     }
 
     @Override
-    public void onResume(AspectActivity activity) {
+    public void onResume(@NonNull AspectActivity activity) {
     }
 
     @Override
-    public void onSaveInstanceState(AspectActivity activity, Bundle outState) {
+    public void onSaveInstanceState(@NonNull AspectActivity activity, @NonNull Bundle outState) {
     }
 
     @Override
-    public void onStart(AspectActivity activity) {
+    public void onStart(@NonNull AspectActivity activity) {
     }
 
     @Override
-    public void onStop(AspectActivity activity) {
+    public void onStop(@NonNull AspectActivity activity) {
     }
 
     @Override
-    public void onTitleChanged(AspectActivity activity, CharSequence title, int color) {
+    public void onTitleChanged(@NonNull AspectActivity activity, CharSequence title, int color) {
     }
 
     @Override
-    public void onUserLeaveHint(AspectActivity activity) {
+    public void onUserLeaveHint(@NonNull AspectActivity activity) {
     }
 
     @Nullable
     @Override
-    public ActionMode onWindowStartingActionMode(AspectActivity activity, ActionMode.Callback callback) {
+    public ActionMode onWindowStartingActionMode(@NonNull AspectActivity activity, ActionMode.Callback callback) {
         return null;
     }
 
     @Override
-    public boolean onContextItemSelected(AspectActivity activity, MenuItem item) {
+    public boolean onContextItemSelected(@NonNull AspectActivity activity, MenuItem item) {
         return false;
     }
 
     @Override
-    public boolean onCreateOptionsMenu(AspectActivity activity, Menu menu) {
+    public boolean onCreateOptionsMenu(@NonNull AspectActivity activity, Menu menu) {
         return false;
     }
 
     @Override
-    public boolean onCreatePanelMenu(AspectActivity activity, int featureId, Menu menu) {
+    public boolean onCreatePanelMenu(@NonNull AspectActivity activity, int featureId, Menu menu) {
         return false;
     }
 
     @Override
-    public boolean onCreateThumbnail(AspectActivity activity, Bitmap outBitmap, Canvas canvas) {
+    public boolean onCreateThumbnail(@NonNull AspectActivity activity, Bitmap outBitmap, Canvas canvas) {
         return false;
     }
 
     @Override
-    public boolean onGenericMotionEvent(AspectActivity activity, MotionEvent event) {
+    public boolean onGenericMotionEvent(@NonNull AspectActivity activity, MotionEvent event) {
         return false;
     }
 
     @Override
-    public boolean onKeyDown(AspectActivity activity, int keyCode, KeyEvent event) {
+    public boolean onKeyDown(@NonNull AspectActivity activity, int keyCode, @NonNull KeyEvent event) {
         return false;
     }
 
     @Override
-    public boolean onKeyLongPress(AspectActivity activity, int keyCode, KeyEvent event) {
+    public boolean onKeyLongPress(@NonNull AspectActivity activity, int keyCode, KeyEvent event) {
         return false;
     }
 
     @Override
-    public boolean onKeyMultiple(AspectActivity activity, int keyCode, int repeatCount, KeyEvent event) {
+    public boolean onKeyMultiple(@NonNull AspectActivity activity, int keyCode, int repeatCount, KeyEvent event) {
         return false;
     }
 
     @Override
-    public boolean onKeyShortcut(AspectActivity activity, int keyCode, KeyEvent event) {
+    public boolean onKeyShortcut(@NonNull AspectActivity activity, int keyCode, KeyEvent event) {
         return false;
     }
 
     @Override
-    public boolean onKeyUp(AspectActivity activity, int keyCode, KeyEvent event) {
+    public boolean onKeyUp(@NonNull AspectActivity activity, int keyCode, @NonNull KeyEvent event) {
         return false;
     }
 
     @Override
-    public boolean onMenuItemSelected(AspectActivity activity, int featureId, MenuItem item) {
+    public boolean onMenuItemSelected(@NonNull AspectActivity activity, int featureId, @NonNull MenuItem item) {
         return false;
     }
 
     @Override
-    public boolean onMenuOpened(AspectActivity activity, int featureId, Menu menu) {
+    public boolean onMenuOpened(@NonNull AspectActivity activity, int featureId, Menu menu) {
         return false;
     }
 
     @Override
-    public boolean onNavigateUp(AspectActivity activity) {
+    public boolean onNavigateUp(@NonNull AspectActivity activity) {
         return false;
     }
 
     @Override
-    public boolean onNavigateUpFromChild(AspectActivity activity, Activity child) {
+    public boolean onNavigateUpFromChild(@NonNull AspectActivity activity, Activity child) {
         return false;
     }
 
     @Override
-    public boolean onOptionsItemSelected(AspectActivity activity, MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull AspectActivity activity, MenuItem item) {
         return false;
     }
 
     @Override
-    public boolean onPrepareOptionsMenu(AspectActivity activity, Menu menu) {
+    public boolean onPrepareOptionsMenu(@NonNull AspectActivity activity, Menu menu) {
         return false;
     }
 
     @Override
-    public boolean onPreparePanel(AspectActivity activity, int featureId, View view, Menu menu) {
+    public boolean onPreparePanel(@NonNull AspectActivity activity, int featureId, View view, Menu menu) {
         return false;
     }
 
     @Override
-    public boolean onSearchRequested(AspectActivity activity) {
+    public boolean onSearchRequested(@NonNull AspectActivity activity) {
         return false;
     }
 
     @Override
-    public boolean onTouchEvent(AspectActivity activity, MotionEvent event) {
+    public boolean onTouchEvent(@NonNull AspectActivity activity, MotionEvent event) {
         return false;
     }
 
     @Override
-    public boolean onTrackballEvent(AspectActivity activity, MotionEvent event) {
+    public boolean onTrackballEvent(@NonNull AspectActivity activity, MotionEvent event) {
         return false;
     }
 
     @Nullable
     @Override
-    public CharSequence onCreateDescription(AspectActivity activity) {
-        return null;
-    }
-
-    @Nullable
-    @Override
-    public View onCreatePanelView(AspectActivity activity, int featureId) {
+    public CharSequence onCreateDescription(@NonNull AspectActivity activity) {
         return null;
     }
 
     @Nullable
     @Override
-    public View onCreateView(AspectActivity activity, String name, Context context, AttributeSet attrs) {
-        return null;
-    }
-
-    @Override
-    public View onCreateView(AspectActivity activity, View parent, String name, Context context, AttributeSet attrs) {
-        return null;
-    }
-
-    @Override
-    public void onActionModeFinished(AspectActivity activity, ActionMode mode) {
-    }
-
-    @Override
-    public void onActionModeStarted(AspectActivity activity, ActionMode mode) {
-    }
-
-    @Override
-    public void onActivityReenter(AspectActivity activity, int resultCode, Intent data) {
-    }
-
-    @Override
-    public void onAttachedToWindow(AspectActivity activity) {
-    }
-
-    @Override
-    public void onAttachFragment(AspectActivity activity, Fragment fragment) {
-    }
-
-    @Override
-    public void onBackPressed(AspectActivity activity) {
-    }
-
-    @Override
-    public void onConfigurationChanged(AspectActivity activity, Configuration newConfig) {
-    }
-
-    @Override
-    public void onContentChanged(AspectActivity activity) {
-    }
-
-    @Override
-    public void onContextMenuClosed(AspectActivity activity, Menu menu) {
-    }
-
-    @Override
-    public void onCreate(AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
-    }
-
-    @Override
-    public void onCreateContextMenu(AspectActivity activity, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-    }
-
-    @Override
-    public void onCreateNavigateUpTaskStack(AspectActivity activity, TaskStackBuilder builder) {
-    }
-
-    @Override
-    public void onDetachedFromWindow(AspectActivity activity) {
-    }
-
-    @Override
-    public void onEnterAnimationComplete(AspectActivity activity) {
-    }
-
-    @Override
-    public void onLowMemory(AspectActivity activity) {
-    }
-
-    @Override
-    public void onOptionsMenuClosed(AspectActivity activity, Menu menu) {
-    }
-
-    @Override
-    public void onPanelClosed(AspectActivity activity, int featureId, Menu menu) {
-    }
-
-    @Override
-    public void onPostCreate(AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
-    }
-
-    @Override
-    public void onPrepareNavigateUpTaskStack(AspectActivity activity, TaskStackBuilder builder) {
-    }
-
-    @Override
-    public void onProvideAssistData(AspectActivity activity, Bundle data) {
-    }
-
-    @Override
-    public void onRestoreInstanceState(AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
-    }
-
-    @Override
-    public void onTrimMemory(AspectActivity activity, int level) {
-    }
-
-    @Override
-    public void onUserInteraction(AspectActivity activity) {
-    }
-
-    @Override
-    public void onVisibleBehindCanceled(AspectActivity activity) {
-    }
-
-    @Override
-    public void onWindowAttributesChanged(AspectActivity activity, WindowManager.LayoutParams params) {
-    }
-
-    @Override
-    public void onWindowFocusChanged(AspectActivity activity, boolean hasFocus) {
-    }
-
-    @Override
-    public Dialog onCreateDialog(AspectActivity activity, int id) {
+    public View onCreatePanelView(@NonNull AspectActivity activity, int featureId) {
         return null;
     }
 
     @Nullable
     @Override
-    public Dialog onCreateDialog(AspectActivity activity, int id, Bundle args) {
+    public View onCreateView(@NonNull AspectActivity activity, String name, Context context, AttributeSet attrs) {
         return null;
     }
 
     @Override
-    public void onPrepareDialog(AspectActivity activity, int id, Dialog dialog) {
+    public View onCreateView(@NonNull AspectActivity activity, View parent, String name, @NonNull Context context, @NonNull AttributeSet attrs) {
+        return null;
     }
 
     @Override
-    public void onPrepareDialog(AspectActivity activity, int id, Dialog dialog, Bundle args) {
+    public void onActionModeFinished(@NonNull AspectActivity activity, ActionMode mode) {
     }
 
     @Override
-    public Object onRetainNonConfigurationInstance(AspectActivity activity) {
+    public void onActionModeStarted(@NonNull AspectActivity activity, ActionMode mode) {
+    }
+
+    @Override
+    public void onActivityReenter(@NonNull AspectActivity activity, int resultCode, Intent data) {
+    }
+
+    @Override
+    public void onAttachedToWindow(@NonNull AspectActivity activity) {
+    }
+
+    @Override
+    public void onAttachFragment(@NonNull AspectActivity activity, Fragment fragment) {
+    }
+
+    @Override
+    public void onBackPressed(@NonNull AspectActivity activity) {
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull AspectActivity activity, Configuration newConfig) {
+    }
+
+    @Override
+    public void onContentChanged(@NonNull AspectActivity activity) {
+    }
+
+    @Override
+    public void onContextMenuClosed(@NonNull AspectActivity activity, Menu menu) {
+    }
+
+    @Override
+    public void onCreate(@NonNull AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
+    }
+
+    @Override
+    public void onCreateContextMenu(@NonNull AspectActivity activity, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+    }
+
+    @Override
+    public void onCreateNavigateUpTaskStack(@NonNull AspectActivity activity, @NonNull TaskStackBuilder builder) {
+    }
+
+    @Override
+    public void onDetachedFromWindow(@NonNull AspectActivity activity) {
+    }
+
+    @Override
+    public void onEnterAnimationComplete(@NonNull AspectActivity activity) {
+    }
+
+    @Override
+    public void onLowMemory(@NonNull AspectActivity activity) {
+    }
+
+    @Override
+    public void onOptionsMenuClosed(@NonNull AspectActivity activity, Menu menu) {
+    }
+
+    @Override
+    public void onPanelClosed(@NonNull AspectActivity activity, int featureId, Menu menu) {
+    }
+
+    @Override
+    public void onPostCreate(@NonNull AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
+    }
+
+    @Override
+    public void onPrepareNavigateUpTaskStack(@NonNull AspectActivity activity, TaskStackBuilder builder) {
+    }
+
+    @Override
+    public void onProvideAssistData(@NonNull AspectActivity activity, Bundle data) {
+    }
+
+    @Override
+    public void onRestoreInstanceState(@NonNull AspectActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
+    }
+
+    @Override
+    public void onTrimMemory(@NonNull AspectActivity activity, int level) {
+    }
+
+    @Override
+    public void onUserInteraction(@NonNull AspectActivity activity) {
+    }
+
+    @Override
+    public void onVisibleBehindCanceled(@NonNull AspectActivity activity) {
+    }
+
+    @Override
+    public void onWindowAttributesChanged(@NonNull AspectActivity activity, WindowManager.LayoutParams params) {
+    }
+
+    @Override
+    public void onWindowFocusChanged(@NonNull AspectActivity activity, boolean hasFocus) {
+    }
+
+    @Override
+    public Dialog onCreateDialog(@NonNull AspectActivity activity, int id) {
+        return null;
+    }
+
+    @Nullable
+    @Override
+    public Dialog onCreateDialog(@NonNull AspectActivity activity, int id, Bundle args) {
+        return null;
+    }
+
+    @Override
+    public void onPrepareDialog(@NonNull AspectActivity activity, int id, @NonNull Dialog dialog) {
+    }
+
+    @Override
+    public void onPrepareDialog(@NonNull AspectActivity activity, int id, @NonNull Dialog dialog, Bundle args) {
+    }
+
+    @Override
+    public Object onRetainNonConfigurationInstance(@NonNull AspectActivity activity) {
         return null;
     }
 

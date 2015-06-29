@@ -46,344 +46,344 @@ import com.shazam.android.aspects.base.activity.AspectFragmentActivity;
 public class NoOpSupportActivityAspect implements SupportActivityAspect {
 
     @Override
-    public void onPrepareDialog(AspectFragmentActivity activity, int id, Dialog dialog) {
+    public void onPrepareDialog(@NonNull AspectFragmentActivity activity, int id, @NonNull Dialog dialog) {
     }
 
     @Override
-    public void onPrepareDialog(AspectFragmentActivity activity, int id, Dialog dialog, Bundle args) {
+    public void onPrepareDialog(@NonNull AspectFragmentActivity activity, int id, @NonNull Dialog dialog, Bundle args) {
     }
 
     @Override
-    public Dialog onCreateDialog(AspectFragmentActivity activity, int id) {
+    public Dialog onCreateDialog(@NonNull AspectFragmentActivity activity, int id) {
         return null;
     }
 
     @Nullable
     @Override
-    public Dialog onCreateDialog(AspectFragmentActivity activity, int id, Bundle args) {
+    public Dialog onCreateDialog(@NonNull AspectFragmentActivity activity, int id, Bundle args) {
         return null;
     }
 
     @Override
-    public void onApplyThemeResource(AspectFragmentActivity activity, Resources.Theme theme, int resid, boolean first) {
+    public void onApplyThemeResource(@NonNull AspectFragmentActivity activity, @NonNull Resources.Theme theme, int resid, boolean first) {
     }
 
     @Override
-    public void onPostCreate(AspectFragmentActivity activity, Bundle savedInstanceState) {
+    public void onPostCreate(@NonNull AspectFragmentActivity activity, Bundle savedInstanceState) {
     }
 
     @Override
-    public void onChildTitleChanged(AspectFragmentActivity activity, Activity childActivity, CharSequence title) {
+    public void onChildTitleChanged(@NonNull AspectFragmentActivity activity, Activity childActivity, CharSequence title) {
     }
 
     @Override
-    public void onRestart(AspectFragmentActivity activity) {
+    public void onRestart(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onRestoreInstanceState(AspectFragmentActivity activity, Bundle savedInstanceState) {
+    public void onRestoreInstanceState(@NonNull AspectFragmentActivity activity, @NonNull Bundle savedInstanceState) {
     }
 
     @Override
-    public void onTitleChanged(AspectFragmentActivity activity, CharSequence title, int color) {
+    public void onTitleChanged(@NonNull AspectFragmentActivity activity, CharSequence title, int color) {
     }
 
     @Override
-    public void onUserLeaveHint(AspectFragmentActivity activity) {
+    public void onUserLeaveHint(@NonNull AspectFragmentActivity activity) {
     }
 
     @Nullable
     @Override
-    public ActionMode onWindowStartingActionMode(AspectFragmentActivity activity, ActionMode.Callback callback) {
+    public ActionMode onWindowStartingActionMode(@NonNull AspectFragmentActivity activity, ActionMode.Callback callback) {
         return null;
     }
 
     @Override
-    public boolean onContextItemSelected(AspectFragmentActivity activity, MenuItem item) {
+    public boolean onContextItemSelected(@NonNull AspectFragmentActivity activity, MenuItem item) {
         return false;
     }
 
     @Override
-    public boolean onCreateOptionsMenu(AspectFragmentActivity activity, Menu menu) {
+    public boolean onCreateOptionsMenu(@NonNull AspectFragmentActivity activity, Menu menu) {
         return false;
     }
 
     @Override
-    public boolean onCreateThumbnail(AspectFragmentActivity activity, Bitmap outBitmap, Canvas canvas) {
+    public boolean onCreateThumbnail(@NonNull AspectFragmentActivity activity, Bitmap outBitmap, Canvas canvas) {
         return false;
     }
 
     @Override
-    public boolean onGenericMotionEvent(AspectFragmentActivity activity, MotionEvent event) {
+    public boolean onGenericMotionEvent(@NonNull AspectFragmentActivity activity, MotionEvent event) {
         return false;
     }
 
     @Override
-    public boolean onKeyLongPress(AspectFragmentActivity activity, int keyCode, KeyEvent event) {
+    public boolean onKeyLongPress(@NonNull AspectFragmentActivity activity, int keyCode, KeyEvent event) {
         return false;
     }
 
     @Override
-    public boolean onKeyMultiple(AspectFragmentActivity activity, int keyCode, int repeatCount, KeyEvent event) {
+    public boolean onKeyMultiple(@NonNull AspectFragmentActivity activity, int keyCode, int repeatCount, KeyEvent event) {
         return false;
     }
 
     @Override
-    public boolean onKeyShortcut(AspectFragmentActivity activity, int keyCode, KeyEvent event) {
+    public boolean onKeyShortcut(@NonNull AspectFragmentActivity activity, int keyCode, KeyEvent event) {
         return false;
     }
 
     @Override
-    public boolean onKeyUp(AspectFragmentActivity activity, int keyCode, KeyEvent event) {
+    public boolean onKeyUp(@NonNull AspectFragmentActivity activity, int keyCode, @NonNull KeyEvent event) {
         return false;
     }
 
     @Override
-    public boolean onMenuOpened(AspectFragmentActivity activity, int featureId, Menu menu) {
+    public boolean onMenuOpened(@NonNull AspectFragmentActivity activity, int featureId, Menu menu) {
         return false;
     }
 
     @Override
-    public boolean onNavigateUp(AspectFragmentActivity activity) {
+    public boolean onNavigateUp(@NonNull AspectFragmentActivity activity) {
         return false;
     }
 
     @Override
-    public boolean onNavigateUpFromChild(AspectFragmentActivity activity, Activity child) {
+    public boolean onNavigateUpFromChild(@NonNull AspectFragmentActivity activity, Activity child) {
         return false;
     }
 
     @Override
-    public boolean onOptionsItemSelected(AspectFragmentActivity activity, MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull AspectFragmentActivity activity, MenuItem item) {
         return false;
     }
 
     @Override
-    public boolean onPrepareOptionsMenu(AspectFragmentActivity activity, Menu menu) {
+    public boolean onPrepareOptionsMenu(@NonNull AspectFragmentActivity activity, Menu menu) {
         return false;
     }
 
     @Override
-    public boolean onSearchRequested(AspectFragmentActivity activity) {
+    public boolean onSearchRequested(@NonNull AspectFragmentActivity activity) {
         return false;
     }
 
     @Override
-    public boolean onTouchEvent(AspectFragmentActivity activity, MotionEvent event) {
+    public boolean onTouchEvent(@NonNull AspectFragmentActivity activity, MotionEvent event) {
         return false;
     }
 
     @Override
-    public boolean onTrackballEvent(AspectFragmentActivity activity, MotionEvent event) {
+    public boolean onTrackballEvent(@NonNull AspectFragmentActivity activity, MotionEvent event) {
         return false;
     }
 
     @Nullable
     @Override
-    public CharSequence onCreateDescription(AspectFragmentActivity activity) {
+    public CharSequence onCreateDescription(@NonNull AspectFragmentActivity activity) {
         return null;
     }
 
     @Nullable
     @Override
-    public View onCreatePanelView(AspectFragmentActivity activity, int featureId) {
+    public View onCreatePanelView(@NonNull AspectFragmentActivity activity, int featureId) {
         return null;
     }
 
     @Override
-    public View onCreateView(AspectFragmentActivity activity, View parent, String name, Context context, AttributeSet attrs) {
+    public View onCreateView(@NonNull AspectFragmentActivity activity, View parent, String name, @NonNull Context context, @NonNull AttributeSet attrs) {
         return null;
     }
 
     @Override
-    public void onActionModeFinished(AspectFragmentActivity activity, ActionMode mode) {
+    public void onActionModeFinished(@NonNull AspectFragmentActivity activity, ActionMode mode) {
     }
 
     @Override
-    public View onCreateView(AspectFragmentActivity activity, String name, Context context, AttributeSet attrs) {
+    public View onCreateView(@NonNull AspectFragmentActivity activity, String name, @NonNull Context context, @NonNull AttributeSet attrs) {
         return null;
     }
 
     @Override
-    public void onActionModeStarted(AspectFragmentActivity activity, ActionMode mode) {
+    public void onActionModeStarted(@NonNull AspectFragmentActivity activity, ActionMode mode) {
     }
 
     @Override
-    public void onActivityReenter(AspectFragmentActivity activity, int resultCode, Intent data) {
+    public void onActivityReenter(@NonNull AspectFragmentActivity activity, int resultCode, Intent data) {
     }
 
     @Override
-    public void onAttachedToWindow(AspectFragmentActivity activity) {
+    public void onAttachedToWindow(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onAttachFragment(AspectFragmentActivity activity, Fragment fragment) {
+    public void onAttachFragment(@NonNull AspectFragmentActivity activity, Fragment fragment) {
     }
 
     @Override
-    public void onAttachFragment(AspectFragmentActivity activity, android.support.v4.app.Fragment fragment) {
+    public void onAttachFragment(@NonNull AspectFragmentActivity activity, android.support.v4.app.Fragment fragment) {
     }
 
     @Override
-    public void onContentChanged(AspectFragmentActivity activity) {
+    public void onContentChanged(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onContextMenuClosed(AspectFragmentActivity activity, Menu menu) {
+    public void onContextMenuClosed(@NonNull AspectFragmentActivity activity, Menu menu) {
     }
 
     @Override
-    public void onCreate(AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
+    public void onCreate(@NonNull AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
     }
 
     @Override
-    public void onCreateContextMenu(AspectFragmentActivity activity, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+    public void onCreateContextMenu(@NonNull AspectFragmentActivity activity, ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
     }
 
     @Override
-    public void onCreateNavigateUpTaskStack(AspectFragmentActivity activity, TaskStackBuilder builder) {
+    public void onCreateNavigateUpTaskStack(@NonNull AspectFragmentActivity activity, @NonNull TaskStackBuilder builder) {
     }
 
     @Override
-    public void onDetachedFromWindow(AspectFragmentActivity activity) {
+    public void onDetachedFromWindow(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onEnterAnimationComplete(AspectFragmentActivity activity) {
+    public void onEnterAnimationComplete(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onOptionsMenuClosed(AspectFragmentActivity activity, Menu menu) {
+    public void onOptionsMenuClosed(@NonNull AspectFragmentActivity activity, Menu menu) {
     }
 
     @Override
-    public void onPostCreate(AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
+    public void onPostCreate(@NonNull AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
     }
 
     @Override
-    public void onPrepareNavigateUpTaskStack(AspectFragmentActivity activity, TaskStackBuilder builder) {
+    public void onPrepareNavigateUpTaskStack(@NonNull AspectFragmentActivity activity, TaskStackBuilder builder) {
     }
 
     @Override
-    public void onProvideAssistData(AspectFragmentActivity activity, Bundle data) {
+    public void onProvideAssistData(@NonNull AspectFragmentActivity activity, Bundle data) {
     }
 
     @Override
-    public void onRestoreInstanceState(AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
+    public void onRestoreInstanceState(@NonNull AspectFragmentActivity activity, Bundle savedInstanceState, PersistableBundle persistentState) {
     }
 
     @Override
-    public void onSaveInstanceState(AspectFragmentActivity activity, Bundle outState, PersistableBundle outPersistentState) {
+    public void onSaveInstanceState(@NonNull AspectFragmentActivity activity, Bundle outState, PersistableBundle outPersistentState) {
     }
 
     @Override
-    public void onTrimMemory(AspectFragmentActivity activity, int level) {
+    public void onTrimMemory(@NonNull AspectFragmentActivity activity, int level) {
     }
 
     @Override
-    public void onUserInteraction(AspectFragmentActivity activity) {
+    public void onUserInteraction(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onVisibleBehindCanceled(AspectFragmentActivity activity) {
+    public void onVisibleBehindCanceled(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onWindowAttributesChanged(AspectFragmentActivity activity, WindowManager.LayoutParams params) {
+    public void onWindowAttributesChanged(@NonNull AspectFragmentActivity activity, WindowManager.LayoutParams params) {
     }
 
     @Override
-    public void onWindowFocusChanged(AspectFragmentActivity activity, boolean hasFocus) {
+    public void onWindowFocusChanged(@NonNull AspectFragmentActivity activity, boolean hasFocus) {
     }
 
     @Override
-    public boolean onPrepareOptionsPanel(AspectFragmentActivity activity, View view, Menu menu) {
+    public boolean onPrepareOptionsPanel(@NonNull AspectFragmentActivity activity, View view, Menu menu) {
         return false;
     }
 
     @Override
-    public void onActivityResult(AspectFragmentActivity activity, int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(@NonNull AspectFragmentActivity activity, int requestCode, int resultCode, Intent data) {
     }
 
     @Override
-    public void onCreate(AspectFragmentActivity activity, Bundle savedInstanceState) {
+    public void onCreate(@NonNull AspectFragmentActivity activity, @Nullable Bundle savedInstanceState) {
     }
 
     @Override
-    public void onDestroy(AspectFragmentActivity activity) {
+    public void onDestroy(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onNewIntent(AspectFragmentActivity activity, Intent intent) {
+    public void onNewIntent(@NonNull AspectFragmentActivity activity, Intent intent) {
     }
 
     @Override
-    public void onPause(AspectFragmentActivity activity) {
+    public void onPause(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onPostResume(AspectFragmentActivity activity) {
+    public void onPostResume(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onResume(AspectFragmentActivity activity) {
+    public void onResume(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onResumeFragments(AspectFragmentActivity activity) {
+    public void onResumeFragments(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onSaveInstanceState(AspectFragmentActivity activity, Bundle outState) {
+    public void onSaveInstanceState(@NonNull AspectFragmentActivity activity, Bundle outState) {
     }
 
     @Override
-    public void onStart(AspectFragmentActivity activity) {
+    public void onStart(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onStop(AspectFragmentActivity activity) {
+    public void onStop(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public boolean onCreatePanelMenu(AspectFragmentActivity activity, int featureId, Menu menu) {
+    public boolean onCreatePanelMenu(@NonNull AspectFragmentActivity activity, int featureId, Menu menu) {
         return false;
     }
 
     @Override
-    public boolean onKeyDown(AspectFragmentActivity activity, int keyCode, KeyEvent event) {
+    public boolean onKeyDown(@NonNull AspectFragmentActivity activity, int keyCode, KeyEvent event) {
         return false;
     }
 
     @Override
-    public boolean onMenuItemSelected(AspectFragmentActivity activity, int featureId, MenuItem item) {
+    public boolean onMenuItemSelected(@NonNull AspectFragmentActivity activity, int featureId, MenuItem item) {
         return false;
     }
 
     @Override
-    public boolean onPreparePanel(AspectFragmentActivity activity, int featureId, View view, Menu menu) {
+    public boolean onPreparePanel(@NonNull AspectFragmentActivity activity, int featureId, View view, Menu menu) {
         return false;
     }
 
     @Override
-    public Object onRetainCustomNonConfigurationInstance(AspectFragmentActivity activity) {
+    public Object onRetainCustomNonConfigurationInstance(@NonNull AspectFragmentActivity activity) {
         return null;
     }
 
     @Override
-    public void onBackPressed(AspectFragmentActivity activity) {
+    public void onBackPressed(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onConfigurationChanged(AspectFragmentActivity activity, Configuration newConfig) {
+    public void onConfigurationChanged(@NonNull AspectFragmentActivity activity, Configuration newConfig) {
     }
 
     @Override
-    public void onLowMemory(AspectFragmentActivity activity) {
+    public void onLowMemory(@NonNull AspectFragmentActivity activity) {
     }
 
     @Override
-    public void onPanelClosed(AspectFragmentActivity activity, int featureId, Menu menu) {
+    public void onPanelClosed(@NonNull AspectFragmentActivity activity, int featureId, Menu menu) {
     }
 
     @NonNull
