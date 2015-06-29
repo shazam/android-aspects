@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Android-aspects : A simple aspecting library for Android">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <title>android-aspects</title>
+  </head>
+
+  <body>
+        <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/shazam/android-aspects">View on GitHub</a>
+
+          <h1 id="project_title">android-aspects</h1>
+          <h2 id="project_tagline">A simple aspecting library for Android</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/shazam/android-aspects/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/shazam/android-aspects/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+        <h2 id="have-you-ever-had-to-extend-multiple-activities">Have you ever had to extend multiple Activities?</h2>
+
+<p>A common occurrence in the Android ecosystem is the requirement to extend a
+custom class (usually an <strong>Activity</strong>) to inherit the behavior of some library.
+This leads to a problem, when 2 or more libraries are needed, and they both
+have a custom Activity that needs to be extended.</p>
+
+<p><em>android-aspects</em> aims, not only to solve this problem, but
+make the implementation of cross cutting concerns in your app easy to
+implement and maintain.</p>
+
+<p>The library provides a lightweight mechanism for adding functionality to <strong>Activities</strong>, <strong>Fragments</strong> and <strong>Applications</strong> without modifying their source code, by using annotations.</p>
+
+<p>Objects extending from <strong>AspectActivity</strong>, <strong>AspectFragmentActivity</strong>, <strong>AspectAppCompatActivity</strong>, <strong>AspectFragment</strong>, <strong>AspectSupportFragment</strong> and <strong>AspectApplication</strong>, can apply the <strong>Aspects</strong> annotation and
+provide a list of classes, called <em>aspects</em>, that add functionality at runtime.</p>
+
+<p>For example, this is how an <strong>Aspect</strong> providing <em>multidex</em> functionality to the
+<strong>Application</strong> would look like:</p>
+
+<h4 id="example">Example</h4>
+
+<p><em>MultidexAspect.java</em></p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MultidexAspect</span> <span class="kd">extends</span> <span class="n">NoOpApplicationAspect</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">attachBaseContext</span><span class="o">(</span><span class="n">AspectApplication</span> <span class="n">application</span><span class="o">,</span> <span class="n">Context</span> <span class="n">base</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">MultiDex</span><span class="o">.</span><span class="na">install</span><span class="o">(</span><span class="n">application</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+
+<p><em>SampleApplication.java</em></p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Aspects</span><span class="o">(</span><span class="n">aspects</span> <span class="o">=</span> <span class="n">MultidexAspect</span><span class="o">.</span><span class="na">class</span><span class="o">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleApplication</span> <span class="kd">extends</span> <span class="n">AspectApplication</span> <span class="o">{</span>
+    <span class="c1">// no custom code added for multidex here.</span>
+    <span class="c1">// This class inherits the behaviour of the aspect automatically</span>
+<span class="o">}</span></code></pre></div>
+
+<p>Custom aspect annotations can be created as well, for ease of reusability and for customization (aspects are inherited):</p>
+
+<p><em>Multidex.java</em></p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Retention</span><span class="o">(</span><span class="n">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span>
+<span class="nd">@Documented</span>
+<span class="nd">@Aspects</span><span class="o">(</span><span class="n">aspects</span> <span class="o">=</span> <span class="n">MultidexAspect</span><span class="o">.</span><span class="na">class</span><span class="o">}</span>
+<span class="kd">public</span> <span class="nd">@interface</span> <span class="n">Multidex</span> <span class="o">{</span>
+<span class="o">}</span></code></pre></div>
+
+<p><em>SampleApplication.java</em></p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Multidex</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleApplication</span> <span class="kd">extends</span> <span class="n">AspectApplication</span> <span class="o">{</span>
+    <span class="c1">// same as before</span>
+<span class="o">}</span></code></pre></div>
+
+<h2 id="installation">Installation</h2>
+
+<p>Note that, for now, the library is not published on a public repository like Maven Central, but will be very shortly. In the meantime you can either include it in your project as a simple module, or you can install it in a local repository by doing:</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">$ </span>git clone https://github.com/shazam/android-aspects.git
+<span class="nv">$ </span><span class="nb">cd </span>android-aspects
+<span class="nv">$ </span>./gradlew clean uploadArchives -PSNAPSHOT_REPOSITORY_URL<span class="o">=</span><span class="s2">&quot;file:///{path_to_your_local)/.m2&quot;</span></code></pre></div>
+
+<p>and then include it in your dependencies:</p>
+
+<div class="highlight"><pre><code class="language-groovy" data-lang="groovy"><span class="n">compile</span> <span class="s1">&#39;com.shazam.android:aspects:1.0.0-SNAPSHOT&#39;</span></code></pre></div>
+
+<p>note that you will also need to add your local repository to your list of repositories, since the android plugin will cause the default mavenLocal() repository to point to the one provided by the Android sdk:</p>
+
+<div class="highlight"><pre><code class="language-groovy" data-lang="groovy"><span class="n">repositories</span> <span class="o">{</span>
+    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">&quot;${System.env.HOME}/.m2&quot;</span> <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">android-aspects maintained by <a href="https://github.com/shazam">shazam</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
