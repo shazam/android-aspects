@@ -16,6 +16,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
 
+import com.shazam.android.aspects.aspects.Aspect;
+import com.shazam.android.aspects.aspects.AspectsProvider;
 import com.shazam.android.aspects.dispatchers.application.AspectApplicationDispatcher;
 
 public class AspectApplication extends Application {
@@ -60,5 +62,9 @@ public class AspectApplication extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         dispatcher.dispatchAttachBaseContext(this, base);
+    }
+
+    protected <A extends Aspect<?>> AspectsProvider<A> getAspectProvider(Class<A> aspectClass) {
+        return dispatcher.getAspectProvider(aspectClass);
     }
 }

@@ -38,6 +38,8 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.shazam.android.aspects.annotations.Aspects;
+import com.shazam.android.aspects.aspects.Aspect;
+import com.shazam.android.aspects.aspects.AspectsProvider;
 import com.shazam.android.aspects.dispatchers.activity.SupportAspectActivityDispatcher;
 import com.shazam.android.aspects.aspects.activity.ActivityAspect;
 
@@ -490,14 +492,18 @@ public class AspectFragmentActivity extends FragmentActivity {
     }
 
     @Override
-    protected void onPrepareDialog(int id, Dialog dialog) {
+    protected void onPrepareDialog(int id, @NonNull Dialog dialog) {
         super.onPrepareDialog(id, dialog);
         dispatcher.dispatchOnPrepareDialog(this, id, dialog);
     }
 
     @Override
-    protected void onPrepareDialog(int id, Dialog dialog, Bundle args) {
+    protected void onPrepareDialog(int id, @NonNull Dialog dialog, Bundle args) {
         super.onPrepareDialog(id, dialog, args);
         dispatcher.dispatchOnPrepareDialog(this, id, dialog, args);
+    }
+
+    protected <A extends Aspect<?>> AspectsProvider<A> getAspectProvider(Class<A> aspectClass) {
+        return dispatcher.getAspectProvider(aspectClass);
     }
 }

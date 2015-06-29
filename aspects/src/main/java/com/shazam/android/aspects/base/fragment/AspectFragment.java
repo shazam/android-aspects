@@ -29,6 +29,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.shazam.android.aspects.annotations.Aspects;
+import com.shazam.android.aspects.aspects.Aspect;
+import com.shazam.android.aspects.aspects.AspectsProvider;
 import com.shazam.android.aspects.dispatchers.fragment.AspectFragmentDispatcher;
 import com.shazam.android.aspects.aspects.fragment.FragmentAspect;
 
@@ -216,5 +218,9 @@ public class AspectFragment extends Fragment {
     public void onViewStateRestored(Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
         dispatcher.dispatchOnViewStateRestored(this, savedInstanceState);
+    }
+
+    protected <A extends Aspect<?>> AspectsProvider<A> getAspectProvider(Class<A> aspectClass) {
+        return dispatcher.getAspectProvider(aspectClass);
     }
 }

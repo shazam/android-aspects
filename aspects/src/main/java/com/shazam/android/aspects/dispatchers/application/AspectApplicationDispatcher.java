@@ -15,6 +15,8 @@ package com.shazam.android.aspects.dispatchers.application;
 import android.content.Context;
 import android.content.res.Configuration;
 
+import com.shazam.android.aspects.aspects.Aspect;
+import com.shazam.android.aspects.aspects.FilteredAspectsProvider;
 import com.shazam.android.aspects.base.application.AspectApplication;
 import com.shazam.android.aspects.aspects.AspectsProvider;
 import com.shazam.android.aspects.aspects.application.ApplicationAspect;
@@ -36,7 +38,7 @@ public class AspectApplicationDispatcher {
     }
 
     private static AspectsProvider<ApplicationAspect> providerFor(AspectApplication application) {
-        return annotatedAspectsFrom(application, AspectApplication.class);
+        return annotatedAspectsFrom(application, ApplicationAspect.class, AspectApplication.class);
     }
 
     public void dispatchOnCreate(AspectApplication application) {
@@ -74,5 +76,9 @@ public class AspectApplicationDispatcher {
         for (ApplicationAspect applicationAspect : applicationAspects) {
             applicationAspect.attachBaseContext(application, base);
         }
+    }
+
+    public  <A extends Aspect<?>> AspectsProvider<A> getAspectProvider(final Class<A> aspectClass) {
+        return new FilteredAspectsProvider<>(aspectClass, applicationAspects);
     }
 }

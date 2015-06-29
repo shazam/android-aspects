@@ -30,9 +30,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 
+import com.shazam.android.aspects.aspects.Aspect;
 import com.shazam.android.aspects.aspects.AspectsProvider;
+import com.shazam.android.aspects.aspects.FilteredAspectsProvider;
 import com.shazam.android.aspects.aspects.fragment.SupportDialogFragmentAspect;
-import com.shazam.android.aspects.base.fragment.AspectFragment;
 import com.shazam.android.aspects.base.fragment.AspectSupportDialogFragment;
 
 import java.util.Collection;
@@ -57,7 +58,7 @@ public class AspectSupportDialogFragmentDispatcher {
     }
 
     private static AspectsProvider<SupportDialogFragmentAspect> providerFor(AspectSupportDialogFragment fragment) {
-        return annotatedAspectsFrom(fragment, AspectFragment.class);
+        return annotatedAspectsFrom(fragment, SupportDialogFragmentAspect.class, AspectSupportDialogFragment.class);
     }
 
     public void dispatchOnActivityCreated(AspectSupportDialogFragment fragment, Bundle savedInstanceState) {
@@ -257,5 +258,9 @@ public class AspectSupportDialogFragmentDispatcher {
         for (SupportDialogFragmentAspect aspect : fragmentAspects) {
             aspect.onViewStateRestored(fragment, savedInstanceState);
         }
+    }
+
+    public  <A extends Aspect<?>> AspectsProvider<A> getAspectProvider(final Class<A> aspectClass) {
+        return new FilteredAspectsProvider<>(aspectClass, fragmentAspects);
     }
 }

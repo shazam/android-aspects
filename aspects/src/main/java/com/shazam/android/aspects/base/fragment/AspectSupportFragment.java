@@ -29,6 +29,8 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 
 import com.shazam.android.aspects.annotations.Aspects;
+import com.shazam.android.aspects.aspects.Aspect;
+import com.shazam.android.aspects.aspects.AspectsProvider;
 import com.shazam.android.aspects.dispatchers.fragment.SupportAspectFragmentDispatcher;
 import com.shazam.android.aspects.aspects.fragment.FragmentAspect;
 
@@ -205,5 +207,9 @@ public class AspectSupportFragment extends Fragment {
     public void onStart() {
         super.onStart();
         dispatcher.dispatchOnStart(this);
+    }
+
+    protected <A extends Aspect<?>> AspectsProvider<A> getAspectProvider(Class<A> aspectClass) {
+        return dispatcher.getAspectProvider(aspectClass);
     }
 }

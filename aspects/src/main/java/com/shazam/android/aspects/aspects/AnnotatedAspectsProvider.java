@@ -28,29 +28,35 @@ import static com.shazam.android.aspects.annotations.RecursiveAnnotationRetrieve
 public final class AnnotatedAspectsProvider<O, A extends Aspect> implements AspectsProvider<A> {
 
     private O annotatedObject;
+    private Class<A> aspectClassFilter;
     private AnnotationRetriever<Aspects> annotationRetriever;
     private Class<?> classAppliedTo;
 
     private AnnotatedAspectsProvider(O annotatedObject,
+                                     Class<A> aspectClassFilter,
                                      AnnotationRetriever<Aspects> annotationRetriever,
                                      Class<?> classAppliedTo) {
         this.annotatedObject = annotatedObject;
+        this.aspectClassFilter = aspectClassFilter;
         this.annotationRetriever = annotationRetriever;
         this.classAppliedTo = classAppliedTo;
     }
 
     public static <OO, AA extends Aspect> AspectsProvider<AA>
-    annotatedAspectsFrom(OO annotatedObject, Class<?> classAppliedTo) {
+    annotatedAspectsFrom(OO annotatedObject, Class<AA> aspectClassFilter, Class<?> classAppliedTo) {
         return annotatedAspectsFrom(annotatedObject,
+                aspectClassFilter,
                 recursiveAnnotationRetriever(Aspects.class),
                 classAppliedTo);
     }
 
     public static <OO, AA extends Aspect> AspectsProvider<AA>
     annotatedAspectsFrom(OO annotatedObject,
+                         Class<AA> aspectClassFilter,
                          AnnotationRetriever<Aspects> annotationRetriever,
                          Class<?> classAppliedTo) {
-        return new AnnotatedAspectsProvider<>(annotatedObject, annotationRetriever, classAppliedTo);
+        return new AnnotatedAspectsProvider<>(annotatedObject, aspectClassFilter,
+                annotationRetriever, classAppliedTo);
     }
 
     public Collection<A> getAspects() {
@@ -66,6 +72,9 @@ public final class AnnotatedAspectsProvider<O, A extends Aspect> implements Aspe
 
     @SuppressWarnings("unchecked")
     private void addAspect(Class<? extends Aspect> aspectClass, Collection<A> aspects) {
+        if (!aspectClassFilter.isAssignableFrom(aspectClass)) {
+            return;
+        }
         //noinspection OverlyBroadCatchBlock
         try {
             A aspect = (A) aspectClass.newInstance();

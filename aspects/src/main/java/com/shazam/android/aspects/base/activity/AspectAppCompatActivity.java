@@ -38,6 +38,8 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.shazam.android.aspects.annotations.Aspects;
+import com.shazam.android.aspects.aspects.Aspect;
+import com.shazam.android.aspects.aspects.AspectsProvider;
 import com.shazam.android.aspects.aspects.activity.AppCompatActivityAspect;
 import com.shazam.android.aspects.dispatchers.activity.AspectAppCompatActivityDispatcher;
 
@@ -535,5 +537,9 @@ public class AspectAppCompatActivity extends AppCompatActivity {
     protected void onPrepareDialog(int id, @NonNull Dialog dialog, Bundle args) {
         super.onPrepareDialog(id, dialog, args);
         dispatcher.dispatchOnPrepareDialog(this, id, dialog, args);
+    }
+
+    protected <A extends Aspect<?>> AspectsProvider<A> getAspectProvider(Class<A> aspectClass) {
+        return dispatcher.getAspectProvider(aspectClass);
     }
 }

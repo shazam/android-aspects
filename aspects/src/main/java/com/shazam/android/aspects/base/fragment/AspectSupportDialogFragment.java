@@ -32,6 +32,8 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 
 import com.shazam.android.aspects.annotations.Aspects;
+import com.shazam.android.aspects.aspects.Aspect;
+import com.shazam.android.aspects.aspects.AspectsProvider;
 import com.shazam.android.aspects.aspects.fragment.DialogFragmentAspect;
 import com.shazam.android.aspects.dispatchers.fragment.AspectSupportDialogFragmentDispatcher;
 
@@ -227,5 +229,9 @@ public class AspectSupportDialogFragment extends DialogFragment {
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
         dispatcher.dispatchOnViewStateRestored(this, savedInstanceState);
+    }
+
+    protected <A extends Aspect<?>> AspectsProvider<A> getAspectProvider(Class<A> aspectClass) {
+        return dispatcher.getAspectProvider(aspectClass);
     }
 }

@@ -30,10 +30,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.shazam.android.aspects.aspects.Aspect;
 import com.shazam.android.aspects.aspects.AspectsProvider;
+import com.shazam.android.aspects.aspects.FilteredAspectsProvider;
 import com.shazam.android.aspects.aspects.fragment.DialogFragmentAspect;
 import com.shazam.android.aspects.base.fragment.AspectDialogFragment;
-import com.shazam.android.aspects.base.fragment.AspectFragment;
 
 import java.util.Collection;
 
@@ -57,7 +58,7 @@ public class AspectDialogFragmentDispatcher {
     }
 
     private static AspectsProvider<DialogFragmentAspect> providerFor(AspectDialogFragment fragment) {
-        return annotatedAspectsFrom(fragment, AspectFragment.class);
+        return annotatedAspectsFrom(fragment, DialogFragmentAspect.class, AspectDialogFragment.class);
     }
 
     public Animator dispatchOnCreateAnimator(AspectDialogFragment fragment, int transit, boolean enter, int nextAnim) {
@@ -269,5 +270,9 @@ public class AspectDialogFragmentDispatcher {
         for (DialogFragmentAspect aspect : fragmentAspects) {
             aspect.onViewStateRestored(fragment, savedInstanceState);
         }
+    }
+
+    public  <A extends Aspect<?>> AspectsProvider<A> getAspectProvider(final Class<A> aspectClass) {
+        return new FilteredAspectsProvider<>(aspectClass, fragmentAspects);
     }
 }

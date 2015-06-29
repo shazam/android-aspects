@@ -35,6 +35,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.shazam.android.aspects.aspects.Aspect;
+import com.shazam.android.aspects.aspects.FilteredAspectsProvider;
 import com.shazam.android.aspects.base.activity.AspectFragmentActivity;
 import com.shazam.android.aspects.aspects.AnnotatedAspectsProvider;
 import com.shazam.android.aspects.aspects.AspectsProvider;
@@ -59,7 +61,7 @@ public class SupportAspectActivityDispatcher {
     }
 
     private static AspectsProvider<SupportActivityAspect> providerFor(AspectFragmentActivity activity) {
-        return AnnotatedAspectsProvider.annotatedAspectsFrom(activity, AspectFragmentActivity.class);
+        return AnnotatedAspectsProvider.annotatedAspectsFrom(activity, SupportActivityAspect.class, AspectFragmentActivity.class);
     }
 
     public void dispatchOnPrepareDialog(AspectFragmentActivity activity, int id, Dialog dialog) {
@@ -621,5 +623,9 @@ public class SupportAspectActivityDispatcher {
         for (SupportActivityAspect aspect : activityAspects) {
             aspect.onPanelClosed(activity, featureId, menu);
         }
+    }
+
+    public  <A extends Aspect<?>> AspectsProvider<A> getAspectProvider(final Class<A> aspectClass) {
+        return new FilteredAspectsProvider<>(aspectClass, activityAspects);
     }
 }

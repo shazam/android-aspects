@@ -37,6 +37,8 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.shazam.android.aspects.annotations.Aspects;
+import com.shazam.android.aspects.aspects.Aspect;
+import com.shazam.android.aspects.aspects.AspectsProvider;
 import com.shazam.android.aspects.dispatchers.activity.AspectActivityDispatcher;
 import com.shazam.android.aspects.aspects.activity.ActivityAspect;
 
@@ -480,5 +482,9 @@ public class AspectActivity extends Activity {
     public Object onRetainNonConfigurationInstance() {
         Object instance = super.onRetainNonConfigurationInstance();
         return instance != null ? instance : dispatcher.dispatchOnRetainNonConfigurationInstance(this);
+    }
+
+    protected <A extends Aspect<?>> AspectsProvider<A> getAspectProvider(Class<A> aspectClass) {
+        return dispatcher.getAspectProvider(aspectClass);
     }
 }
