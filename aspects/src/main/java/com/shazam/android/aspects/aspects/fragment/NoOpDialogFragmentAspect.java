@@ -138,6 +138,7 @@ public class NoOpDialogFragmentAspect implements DialogFragmentAspect {
     }
 
     @Override
+    @Deprecated
     public void onInflate(@NonNull AspectDialogFragment fragment, AttributeSet attrs, Bundle savedInstanceState) {
     }
 

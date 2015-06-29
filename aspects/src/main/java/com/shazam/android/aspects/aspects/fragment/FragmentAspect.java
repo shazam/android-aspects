@@ -76,6 +76,7 @@ public interface FragmentAspect extends Aspect<AspectFragment> {
 
     void onLowMemory(@NonNull AspectFragment fragment);
 
+    @Deprecated
     void onInflate(@NonNull AspectFragment fragment, AttributeSet attrs, Bundle savedInstanceState);
 
     void onOptionsMenuClosed(@NonNull AspectFragment fragment, Menu menu);

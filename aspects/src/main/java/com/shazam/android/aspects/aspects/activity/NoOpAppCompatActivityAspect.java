@@ -377,6 +377,7 @@ public class NoOpAppCompatActivityAspect implements AppCompatActivityAspect {
     }
 
     @Override
+    @Deprecated
     public void onSupportContentChanged(@NonNull AspectAppCompatActivity activity) {
     }
 
@@ -394,12 +395,14 @@ public class NoOpAppCompatActivityAspect implements AppCompatActivityAspect {
     }
 
     @Override
+    @Deprecated
     public Dialog onCreateDialog(@NonNull AspectAppCompatActivity activity, int id) {
         return null;
     }
 
     @Nullable
     @Override
+    @Deprecated
     public Dialog onCreateDialog(@NonNull AspectAppCompatActivity activity, int id, Bundle args) {
         return null;
     }

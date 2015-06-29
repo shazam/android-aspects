@@ -47,13 +47,17 @@ import com.shazam.android.aspects.aspects.Aspect;
  */
 public interface SupportActivityAspect extends Aspect<AspectFragmentActivity> {
 
+    @Deprecated
     void onPrepareDialog(@NonNull AspectFragmentActivity activity, int id, @NonNull Dialog dialog);
 
+    @Deprecated
     void onPrepareDialog(@NonNull AspectFragmentActivity activity, int id, @NonNull Dialog dialog, Bundle args);
 
+    @Deprecated
     Dialog onCreateDialog(@NonNull AspectFragmentActivity activity, int id);
 
     @Nullable
+    @Deprecated
     Dialog onCreateDialog(@NonNull AspectFragmentActivity activity, int id, Bundle args);
 
     void onApplyThemeResource(@NonNull AspectFragmentActivity activity, @NonNull Resources.Theme theme, int resid, boolean first);

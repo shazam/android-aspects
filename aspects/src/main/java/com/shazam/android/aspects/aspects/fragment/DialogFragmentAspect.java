@@ -88,6 +88,7 @@ public interface DialogFragmentAspect extends Aspect<AspectDialogFragment> {
 
     void onInflate(@NonNull AspectDialogFragment fragment, Activity activity, AttributeSet attrs, Bundle savedInstanceState);
 
+    @Deprecated
     void onInflate(@NonNull AspectDialogFragment fragment, AttributeSet attrs, Bundle savedInstanceState);
 
     void onLowMemory(@NonNull AspectDialogFragment fragment);

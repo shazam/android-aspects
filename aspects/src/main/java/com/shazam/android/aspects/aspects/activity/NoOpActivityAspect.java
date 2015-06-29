@@ -351,17 +351,20 @@ public class NoOpActivityAspect implements ActivityAspect {
     }
 
     @Override
+    @Deprecated
     public Dialog onCreateDialog(@NonNull AspectActivity activity, int id) {
         return null;
     }
 
     @Nullable
     @Override
+    @Deprecated
     public Dialog onCreateDialog(@NonNull AspectActivity activity, int id, Bundle args) {
         return null;
     }
 
     @Override
+    @Deprecated
     public void onPrepareDialog(@NonNull AspectActivity activity, int id, @NonNull Dialog dialog) {
     }
 
@@ -370,6 +373,7 @@ public class NoOpActivityAspect implements ActivityAspect {
     }
 
     @Override
+    @Deprecated
     public Object onRetainNonConfigurationInstance(@NonNull AspectActivity activity) {
         return null;
     }

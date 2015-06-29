@@ -189,14 +189,18 @@ public interface ActivityAspect extends Aspect<AspectActivity> {
 
     void onWindowFocusChanged(@NonNull AspectActivity activity, boolean hasFocus);
 
+    @Deprecated
     Dialog onCreateDialog(@NonNull AspectActivity activity, int id);
 
     @Nullable
+    @Deprecated
     Dialog onCreateDialog(@NonNull AspectActivity activity, int id, Bundle args);
 
+    @Deprecated
     void onPrepareDialog(@NonNull AspectActivity activity, int id, @NonNull Dialog dialog);
 
     void onPrepareDialog(@NonNull AspectActivity activity, int id, @NonNull Dialog dialog, Bundle args);
 
+    @Deprecated
     Object onRetainNonConfigurationInstance(@NonNull AspectActivity activity);
 }

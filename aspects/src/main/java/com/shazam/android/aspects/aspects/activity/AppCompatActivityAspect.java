@@ -202,6 +202,7 @@ public interface AppCompatActivityAspect extends Aspect<AspectAppCompatActivity>
 
     void onSupportActionModeStarted(@NonNull AspectAppCompatActivity activity, android.support.v7.view.ActionMode mode);
 
+    @Deprecated
     void onSupportContentChanged(@NonNull AspectAppCompatActivity activity);
 
     void onBackPressed(@NonNull AspectAppCompatActivity activity);
@@ -210,12 +211,16 @@ public interface AppCompatActivityAspect extends Aspect<AspectAppCompatActivity>
 
     Object onRetainCustomNonConfigurationInstance(@NonNull AspectAppCompatActivity activity);
 
+    @Deprecated
     Dialog onCreateDialog(@NonNull AspectAppCompatActivity activity, int id);
 
     @Nullable
+    @Deprecated
     Dialog onCreateDialog(@NonNull AspectAppCompatActivity activity, int id, Bundle args);
 
+    @Deprecated
     void onPrepareDialog(@NonNull AspectAppCompatActivity activity, int id, @NonNull Dialog dialog);
 
+    @Deprecated
     void onPrepareDialog(@NonNull AspectAppCompatActivity activity, int id, @NonNull Dialog dialog, Bundle args);
 }

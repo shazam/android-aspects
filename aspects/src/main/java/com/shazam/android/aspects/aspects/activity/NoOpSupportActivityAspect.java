@@ -46,20 +46,24 @@ import com.shazam.android.aspects.base.activity.AspectFragmentActivity;
 public class NoOpSupportActivityAspect implements SupportActivityAspect {
 
     @Override
+    @Deprecated
     public void onPrepareDialog(@NonNull AspectFragmentActivity activity, int id, @NonNull Dialog dialog) {
     }
 
     @Override
+    @Deprecated
     public void onPrepareDialog(@NonNull AspectFragmentActivity activity, int id, @NonNull Dialog dialog, Bundle args) {
     }
 
     @Override
+    @Deprecated
     public Dialog onCreateDialog(@NonNull AspectFragmentActivity activity, int id) {
         return null;
     }
 
     @Nullable
     @Override
+    @Deprecated
     public Dialog onCreateDialog(@NonNull AspectFragmentActivity activity, int id, Bundle args) {
         return null;
     }

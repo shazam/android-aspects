@@ -115,6 +115,7 @@ public class NoOpFragmentAspect implements FragmentAspect {
     }
 
     @Override
+    @Deprecated
     public void onInflate(@NonNull AspectFragment fragment, AttributeSet attrs, Bundle savedInstanceState) {
     }
 
