@@ -88,9 +88,9 @@ provide a list of classes, called <em>aspects</em>, that add functionality at ru
 
 <p>Note that, for now, the library is not published on a public repository like Maven Central, but will be very shortly. In the meantime you can either include it in your project as a simple module, or you can install it in a local repository by doing:</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">$ </span>git clone https://github.com/shazam/android-aspects.git
-<span class="nv">$ </span><span class="nb">cd </span>android-aspects
-<span class="nv">$ </span>./gradlew clean uploadArchives -PSNAPSHOT_REPOSITORY_URL<span class="o">=</span><span class="s2">&quot;file:///{path_to_your_local)/.m2&quot;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="gp">$</span> git clone https://github.com/shazam/android-aspects.git
+<span class="gp">$</span> <span class="nb">cd </span>android-aspects
+<span class="gp">$</span> ./gradlew clean uploadArchives -PSNAPSHOT_REPOSITORY_URL<span class="o">=</span><span class="s2">&quot;file:///{path_to_your_local)/.m2&quot;</span></code></pre></div>
 
 <p>and then include it in your dependencies:</p>
 

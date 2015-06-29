@@ -65,7 +65,7 @@ public class SampleApplication extends AspectApplication {
 
 Note that, for now, the library is not published on a public repository like Maven Central, but will be very shortly. In the meantime you can either include it in your project as a simple module, or you can install it in a local repository by doing:
 
-{% highlight sh %}
+{% highlight console %}
 $ git clone https://github.com/shazam/android-aspects.git
 $ cd android-aspects
 $ ./gradlew clean uploadArchives -PSNAPSHOT_REPOSITORY_URL="file:///{path_to_your_local)/.m2"
