@@ -21,6 +21,11 @@ import com.shazam.android.aspects.annotations.Aspects;
  * interface (directly or indirectly) can be listed in the {@link Aspects#aspects()} parameter.
  */
 public interface Aspect<C> {
+    /**
+     * The class this {@link Aspect} acts upon. This is the same class of the generic type {@link C}
+     * This aspect will be ignored when attached to a class that is not assignable from the specified
+     * class
+     */
     @NonNull
     Class<C> classActingOn();
 }

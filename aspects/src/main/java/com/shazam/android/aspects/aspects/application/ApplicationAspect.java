@@ -12,6 +12,7 @@
  */
 package com.shazam.android.aspects.aspects.application;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
 
@@ -20,15 +21,33 @@ import com.shazam.android.aspects.aspects.Aspect;
 
 public interface ApplicationAspect extends Aspect<AspectApplication> {
 
+    /**
+     * @see Application#onCreate()
+     */
     void onCreate(AspectApplication application);
 
+    /**
+     * @see Application#onLowMemory()
+     */
     void onLowMemory(AspectApplication application);
 
+    /**
+     * @see Application#onConfigurationChanged(Configuration)
+     */
     void onConfigurationChanged(AspectApplication application, Configuration newConfig);
 
+    /**
+     * @see Application#onTerminate()
+     */
     void onTerminate(AspectApplication application);
 
+    /**
+     * @see Application#onTrimMemory(int)
+     */
     void onTrimMemory(AspectApplication application, int level);
 
+    /**
+     * @see Application#attachBaseContext(Context)
+     */
     void attachBaseContext(AspectApplication application, Context base);
 }
