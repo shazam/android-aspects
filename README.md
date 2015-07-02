@@ -1,12 +1,12 @@
 # Android Aspects
 
-#### Have you ever had to extend multiple Activities?
+### Have you ever had to extend multiple Activities?
 
 This library provides a lightweight mechanism for adding functionality to **Activities**, **Fragments** and **Applications** without modifying their source code, by using annotations.
 
 It allows you to do cool things like:
 
-### Example
+#### Example
 
 ```java
 @WithPageView(pageName = "my_page_name")
