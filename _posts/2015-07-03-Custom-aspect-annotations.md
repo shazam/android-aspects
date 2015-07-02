@@ -5,7 +5,7 @@ title: Custom aspect annotations
 
 ## Custom aspect annotations
 
-The aspect examples shown in [Getting Started]({% post_url 2015-07-02-Getting-started %}) were interesting but a bit useless. Specifying Aspects like that means that they are static and cannot be configured.
+The aspect examples shown in [Getting Started]({% post_url 2015-07-04-Getting-started %}) were interesting but a bit useless. Specifying Aspects like that means that they are static and cannot be configured.
 
 For example, the analytics aspect has no way of specifying the name of the page the user is interacting with and the ad aspect has no way of specifying a custom site id for the ad provider.
 
