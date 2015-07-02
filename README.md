@@ -1,48 +1,22 @@
 # Android Aspects
 
+#### Have you ever had to extend multiple Activities?
+
 This library provides a lightweight mechanism for adding functionality to **Activities**, **Fragments** and **Applications** without modifying their source code, by using annotations.
 
-Objects extending from **AspectActivity**, **AspectFragmentActivity**, **AspectAppCompatActivity**, **AspectFragment**, **AspectSupportFragment** and **AspectApplication**, can apply the **Aspects** annotation and provide a list of classes, called *aspects,* that add functionality at runtime.
-
-For example, this is how an Aspect providing multidex functionality to the Application would look like:
+It allows you to do cool things like:
 
 ### Example
 
-*MultidexAspect.java*
 ```java
-public class MultidexAspect extends NoOpApplicationAspect {
-    @Override
-    public void attachBaseContext(AspectApplication application, Context base) {
-        MultiDex.install(application);
-    }
-}
-```
-*SampleApplication.java*
-```java
-@Aspects(aspects = MultidexAspect.class}
-public class SampleApplication extends AspectApplication {
-    // no custom code added for multidex here. 
-    // This class inherits the behaviour of the aspect automatically
+@WithPageView(pageName = "my_page_name")
+@WithAd(siteId = 65168)
+public class MyActivity extends AspectActivity {
+    // no custom code written, but activity has ads and analytics behaviour
 }
 ```
 
-Custom aspect annotations can be created as well, for ease of reusability and for customization (aspects are inherited):
-
-*Multidex.java*
-```java
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@Aspects(aspects = MultidexAspect.class}
-public @interface Multidex {
-}
-```
-*SampleApplication.java*
-```java
-@Multidex
-public class SampleApplication extends AspectApplication {
-    // same as before
-}
-```
+For more information on how this can be achieved, visit the project site at [http://shazam.github.io/android-aspects/](http://shazam.github.io/android-aspects/)
 
 ### Version
 1.0.0-SNAPSHOT
@@ -52,7 +26,7 @@ public class SampleApplication extends AspectApplication {
 Note that, for now, the library is not published on a public repository like Maven Central, but will be very shortly. In the meantime you can either include it in your project as a simple module, or you can install it in a local repository by doing:
 
 ```sh
-$ git clone https://github.com/shazam/android-aspects.git 
+$ git clone https://github.com/shazam/android-aspects.git
 $ cd android-aspects
 $ ./gradlew clean uploadArchives -PSNAPSHOT_REPOSITORY_URL="file:///{path_to_your_local)/.m2"
 ```
@@ -74,4 +48,3 @@ License
 ----
 
 Apache 2.0
-
