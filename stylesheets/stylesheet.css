@@ -369,15 +369,15 @@ Full-Width Styles
 
 .sidebar {
   position: fixed;
-  top: 30%;
+  top: 35%;
   left: 0;
   z-index: 999;
-  width: 300px;
+  width: 350px;
   height: 23px;
   list-style-position: inside;
   list-style: none;
   list-style-type: none;
-  font-size: x-large;
+  font-size: 120%;
   font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
