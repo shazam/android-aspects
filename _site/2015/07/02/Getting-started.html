@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Android-aspects : A simple aspecting library for Android">
 
-    <link rel="stylesheet" type="text/css" media="screen" href={{ site.baseurl }}"/stylesheets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" media="screen" href={{ site.baseurl }}"/stylesheets/pygments.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/pygments.css">
     <title>android-aspects</title>
   </head>
 
@@ -30,7 +30,27 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
 
-        {{ content }}
+        <h2 id="getting-started">Getting started</h2>
+
+<p>It all begins by extending one of the Aspect base classes:</p>
+
+<ul>
+  <li>AspectActivity</li>
+  <li>AspectAppCompatActivity</li>
+  <li>AspectFragmentActivity</li>
+  <li>AspectFragment</li>
+  <li>AspectDialogFragment</li>
+  <li>AspectSupportFragment</li>
+  <li>AspectSupportDialogFragment</li>
+</ul>
+
+<p>By extending one of these classes, you can use the <strong>@Aspects</strong> annotation to attach <em>aspects</em>. The annotation take a list of aspects like so:</p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@Aspects</span><span class="o">(</span><span class="n">aspects</span> <span class="o">=</span> <span class="o">{</span><span class="n">SomeAspect</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">AnotherAspect</span><span class="o">.</span><span class="na">class</span><span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleActivity</span> <span class="kd">extends</span> <span class="n">AspectActivity</span> <span class="o">{</span>
+<span class="o">}</span></code></pre></div>
+
+
 
       </section>
     </div>
@@ -38,9 +58,9 @@
     <!-- SIDE NAVIGATION -->
     <div class="sidebar">
       <ul class="sidebar">
-        {% for post in site.posts %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
+        
+            <li><a href="/2015/07/02/Getting-started.html">Getting started</a></li>
+        
       </ul>
     </div>
 

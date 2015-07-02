@@ -367,6 +367,22 @@ Full-Width Styles
   background: #212121;
 }
 
+.sidebar {
+  position: fixed;
+  top: 30%;
+  left: 0;
+  z-index: 999;
+  width: 300px;
+  height: 23px;
+  list-style-position: inside;
+  list-style: none;
+  list-style-type: none;
+  font-size: x-large;
+  font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+}
 
 
 /*******************************************************************************
