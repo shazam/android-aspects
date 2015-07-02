@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Android-aspects : A simple aspecting library for Android">
 
-    <link rel="stylesheet" type="text/css" media="screen" href={{ site.baseurl }}"/stylesheets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" media="screen" href={{ site.baseurl }}"/stylesheets/pygments.css">
+    <link rel="stylesheet" type="text/css" media="screen" href={{ site.url }}"/stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href={{ site.url }}"/stylesheets/pygments.css">
     <title>android-aspects</title>
   </head>
 
@@ -16,7 +16,7 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/shazam/android-aspects">View on GitHub</a>
 
-          <a href="/"><h1 id="project_title">android-aspects</h1></a>
+          <a href="{{ site.baseurl }}"><h1 id="project_title">android-aspects</h1></a>
           <h2 id="project_tagline">A simple aspecting library for Android</h2>
 
             <section id="downloads">
@@ -39,7 +39,7 @@
     <div class="sidebar">
       <ul class="sidebar">
         {% for post in site.posts %}
-            <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
     </div>
