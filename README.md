@@ -23,10 +23,18 @@ For more information on how this can be achieved, visit the project site at [htt
 
 ### Installation
 
-The library is published on Maven Central:
+The library is published on Maven Central. To use it, include this in your dependencies:
 
 ```groovy
 compile 'com.shazam.android:aspects:1.0.0'
+```
+
+note that you will also need to have Maven Central to your list of repositories:
+
+```groovy
+repositories {
+    mavenCentral()
+}
 ```
 
 License
