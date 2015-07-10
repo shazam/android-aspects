@@ -13,13 +13,27 @@ have a custom Activity that needs to be extended.
 make the implementation of cross cutting concerns in your app easy to
 implement and maintain.
 
+It allows you to do cool things like:
+
+{% highlight java %}
+@WithPageView(pageName = "my_page_name")
+@WithAd(siteId = 65168)
+public class MyActivity extends AspectActivity {
+    // no custom code written, but activity has ads and analytics behaviour
+}
+{% endhighlight %}
+
+read on to find out how this can be achieved.
+
+### Introduction
+
 The library provides a lightweight mechanism for adding functionality to **Activities**, **Fragments** and **Applications** without modifying their source code, by using annotations.
 
 Objects extending from **AspectActivity**, **AspectFragmentActivity**, **AspectAppCompatActivity**, **AspectFragment**, **AspectSupportFragment** and **AspectApplication**, can apply the **Aspects** annotation and
 provide a list of classes, called *aspects*, that add functionality at runtime.
 
 For example, this is how an **Aspect** providing *multidex* functionality to the
-**Application** would look like:
+**Application** would look:
 
 #### Example
 
@@ -31,56 +45,41 @@ public class MultidexAspect extends NoOpApplicationAspect {
         MultiDex.install(application);
     }
 }
-{% endhighlight %}
 
-*SampleApplication.java*
-{% highlight java %}
 @Aspects(aspects = MultidexAspect.class}
 public class SampleApplication extends AspectApplication {
     // no custom code added for multidex here.
-    // This class inherits the behaviour of the aspect automatically
+    // This class gets the behaviour of the aspect automatically
 }
 {% endhighlight %}
 
-Custom aspect annotations can be created as well, for ease of reusability and for customization (aspects are inherited):
+Custom aspect annotations can be created as well, for ease of reuse and for customization (aspects are inherited):
 
-*Multidex.java*
 {% highlight java %}
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Aspects(aspects = MultidexAspect.class}
 public @interface Multidex {
 }
-{% endhighlight %}
 
-*SampleApplication.java*
-{% highlight java %}
 @Multidex
 public class SampleApplication extends AspectApplication {
     // same as before
 }
 {% endhighlight %}
 
-## Installation
+### Installation
 
-Note that, for now, the library is not published on a public repository like Maven Central, but will be very shortly. In the meantime you can either include it in your project as a simple module, or you can install it in a local repository by doing:
-
-{% highlight console %}
-$ git clone https://github.com/shazam/android-aspects.git
-$ cd android-aspects
-$ ./gradlew clean uploadArchives -PSNAPSHOT_REPOSITORY_URL="file:///{path_to_your_local)/.m2"
-{% endhighlight %}
-
-and then include it in your dependencies:
+The library is published on Maven Central. To use it, include this in your dependencies:
 
 {% highlight groovy %}
-compile 'com.shazam.android:aspects:1.0.0-SNAPSHOT'
+compile 'com.shazam.android:aspects:1.0.0'
 {% endhighlight %}
 
-note that you will also need to add your local repository to your list of repositories, since the android plugin will cause the default mavenLocal() repository to point to the one provided by the Android sdk:
+note that you will also need to have Maven Central to your list of repositories:
 
 {% highlight groovy %}
 repositories {
-    maven { url "${System.env.HOME}/.m2" }
+    mavenCentral()
 }
 {% endhighlight %}
