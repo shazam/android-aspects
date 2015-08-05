@@ -73,7 +73,7 @@ public class SampleApplication extends AspectApplication {
 The library is published on Maven Central. To use it, include this in your dependencies:
 
 {% highlight groovy %}
-compile 'com.shazam.android:aspects:1.0.0'
+compile 'com.shazam.android:aspects:1.0.0@aar'
 {% endhighlight %}
 
 note that you will also need to have Maven Central to your list of repositories:
