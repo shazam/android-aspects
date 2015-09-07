@@ -43,8 +43,15 @@ public final class RecursiveAnnotationRetriever<A extends Annotation> implements
         List<A> result = new ArrayList<>();
         Set<Class<?>> scannedClasses = new HashSet<Class<?>>();
         Class<?> annotatedObjectClass = annotatedObject.getClass();
-        findAnnotationsOn(annotatedObjectClass, result, scannedClasses);
+        findAnnotationsOnAndParents(annotatedObjectClass, result, scannedClasses);
         return result;
+    }
+
+    private void findAnnotationsOnAndParents(Class<?> annotatedObjectClass, List<A> result, Set<Class<?>> scannedClasses) {
+        findAnnotationsOn(annotatedObjectClass, result, scannedClasses);
+        if (annotatedObjectClass.getSuperclass() != null) {
+            findAnnotationsOnAndParents(annotatedObjectClass.getSuperclass(), result, scannedClasses);
+        }
     }
 
     @SuppressWarnings("unchecked")
